@@ -1,0 +1,65 @@
+{% extends "base.html" %} {% load static %} {% block content %}
+
+<!-- section -->
+
+<section class="inner_banner">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="full">
+                    <h3>Forgot Password</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- end section -->
+
+<!-- section -->
+<div class="section layout_padding contact_section" style="background:#f6f6f6;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-8 col-sm-12">
+                <div class="full float-right_img">
+                    <img src="{% static 'images/forgotpass.png' %}" alt="#">
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12">
+                <div class="contact_form">
+                    <form action="" method="post" id="forgot-pass">
+                        {% csrf_token %}
+                        <fieldset>
+                            <div class="full field" id="email-sec">
+                                <input type="email" id="email" placeholder="Your Email" name="email" />
+                            </div>
+                            <div class="full field" id="otp-sec">
+                                <input type="numbers" placeholder="Enter OTP" name="OTP" />
+                            </div>
+                </div>
+                <div class="full field">
+                    <div class="center"><button type="submit">SUBMIT</button></div>
+                </div>
+                </fieldset>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<script>
+    const queryString = window.location.search;
+    console.log(queryString);
+    const urlParams = new URLSearchParams(queryString);
+    const OTP = urlParams.has('otp')
+    if (OTP) {
+        document.getElementById("email-sec").style.display = "none";
+        document.getElementById("otp-sec").style.display = "block";
+    } else {
+        document.getElementById("email-sec").style.display = "block";
+        document.getElementById("otp-sec").style.display = "none";
+    }
+</script>
+{% endblock %}
+<!-- end section -->

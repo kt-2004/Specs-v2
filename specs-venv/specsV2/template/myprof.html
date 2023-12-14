@@ -1,0 +1,76 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<!-- my profile -->
+<section class="inner_banner">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="full">
+                    <h3>MY PROFILE</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end section myprofile-->
+<section class="contact_section layout_padding" style="
+    -webkit-text-fill-color:crimson;
+    font-size: 1.2em;
+    background-size:cover;
+    background-color: burlywood;
+    background-blend-mode: color-burn;
+    background-image: url('../static/images/prof2.jpg');
+    height:100vh;
+    margin-top: 0px;">
+    <div class="container">
+        <div class="container-fluid">
+            <table class="table table-borderless text-light">
+                <form method="POST" action="">
+                    {% csrf_token %}
+                    <tr>
+                    </tr>
+                    <tr>
+                        <th>Username:</th>
+                        <td><input type="text" name="uName" value="{{uName}}" style="background: transparent; border-bottom: 2px solid sienna;border-radius: 7px;" />
+                            <td>
+                                <hr>
+                    </tr>
+
+                    <tr>
+                        <th>Email:</th>
+                        <td>
+                            <input type="email" name="uEmail" value="{{uEmail}}" style="background: transparent; border-bottom: 2px solid sienna;border-radius: 7px;" />
+                            <td>
+                                <hr>
+                    </tr>
+                    <tr>
+                        <th>Phone no:</th>
+                        <td>
+                            <input type="numbers" name="uPhone" value="{{uPhone}}" minlength="10" maxlength="10 " style="background: transparent; border-bottom: 2px solid sienna;border-radius: 7px; " />
+                            <td>
+                                <hr>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <a href="{% url 'changepass' %} " style="-webkit-text-fill-color:darkgreen; border-bottom: 2px solid crimson; ">Change Password</a>
+                            <td>
+                    </tr>
+
+            </table>
+            <table>
+                <tr>
+                    <td id="feedback-submit">
+                        <button type="submit" style="border-radius: 10px; background-color:lemonchiffon;">Update Profile</button>
+                    </td>
+                    <td> <br> <br></td>
+                    <td id="feedback-submit">
+                        <button type="submit" style="border-radius: 10px; background-color:lemonchiffon;">
+                    <a href="{% url 'logout' %} " style="color:crimson"> LogOut</a></button>
+                    </td>
+                </tr>
+                </form>
+            </table>
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,282 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<!-- Basic -->
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <!-- Site Metas -->
+    <title>CAREER SPECS - Responsive HTML5 Template</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Site Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="shortcut icon" href="#" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="#" />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
+    <!-- Pogo Slider CSS -->
+    <link rel="stylesheet" href="{% static 'css/pogo-slider.min.css' %}" />
+    <!-- Site CSS -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'css/custom.css' %}" />
+
+    <!--[if lt IE 9]
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body id="home" data-spy="scroll" data-target="#navbar-wd" data-offset="98">
+
+    <!-- LOADER -->
+    <div id="preloader">
+        <div style="width: 100vw;" class="loader">
+            <img src="{% static 'images/loading_wire.gif' %}" alt="LOADING YOUR PAGE..." />
+        </div>
+    </div>
+    <!-- end loader -->
+    <!-- END LOADER -->
+    <!-- Start header -->
+    <header class="top-header" style="display: contents;">
+        <nav class="navbar header-nav navbar-expand-lg" style="background-color: whitesmoke;">
+            <div class="container-fluid">
+                <img src="../static/images/main_logo.png" height="90px" width="250px" />
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-wd" aria-controls="navbar-wd" aria-expanded="false" aria-label="Toggle navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbar-wd" style="height: fit-content;">
+                    <ul class="navbar-nav">
+                        <li><a class="nav-link active" href="{% url 'home' %}">Home</a></li>
+                        <li><a class="nav-link" href="{% url 'about' %}">About</a></li>
+                        <li><a class="nav-link" href="{% url 'contact' %}">Contact Us</a></li>
+                        <div id="IsLoggedIn">
+                            <li><a class="nav-link" href="{% url 'myprof' %}">My Profile</a></li>
+                            <li><a class="nav-link" href="{% url 'feedback' %}">FeedBack</a></li>
+                            <li><a class="nav-link" href="{% url 'logout' %}">Logout</a></li>
+                        </div>
+                        <div id="IsNotLoggedIn">
+                            <li><a class="nav-link" href="{% url 'register' %}">Register/Login</a></li>
+                        </div>
+
+                    </ul>
+                </div>
+                <div class="search-box">
+                    <img src="{% static 'images/search.jpg' %}" alt="search icon" width="80px" height="80px" />
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- End header -->
+    {% block content %} {% endblock %}
+    <!-- Start Footer -->
+    <footer class="footer-box" style="padding: 10px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
+                    <div class="footer_blog">
+                        <div class="full margin-bottom_30">
+                            <img src="{% static 'images/main_logo.png' %}" alt="footer logo" />
+                        </div>
+                        <div class="full white_fonts">
+                            <p style="-webkit-text-fill-color: darkgoldenrod;">At career specs, we understand that choosing the right educational stream after 12th grade is a crucial decision in shaping your future. Our innovative system takes into account not just your academic result but also your intersts,
+                                skills and aspirations to guide you towards the most suitable career path. </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
+                    <div class="footer_blog footer_menu white_fonts">
+                        <h3>CareerSpecs Services</h3>
+                        <ul>
+                            <li><a href="#" style="-webkit-text-fill-color: darkgoldenrod;">> Personalized Stream Recommendations</a></li>
+                            <li><a href="#" style="-webkit-text-fill-color: darkgoldenrod;">> Aptitude Testing</a></li>
+                            <li><a href="#" style="-webkit-text-fill-color: darkgoldenrod;">> College Suggestions</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
+                    <div class="footer_blog footer_menu white_fonts">
+                        <h3>Social Media</h3>
+                        <ul style="-webkit-text-fill-color: darkgoldenrod;">
+                            <li><i class="fa-solid fa-linkedin fa-brands fa-xl" style="margin-right: 10px;margin-top: 10px;"></i>LinkedIn</li>
+                            <li><i class="fa-brands fa-instagram fa-xl" style="margin-right: 10px;margin-top: 10px;"></i>Instagram</li>
+                            <li><i class="fa-brands fa-twitter fa-xl" style="margin-right: 10px;margin-top: 10px;"></i>Twitter</li>
+                            <li><i class="fa-brands fa-facebook fa-xl" style="margin-right: 10px;margin-top: 10px;"></i>Facebook</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
+                    <div class="footer_blog footer_menu white_fonts">
+                        <h3>Contact us</h3>
+                        <ul style="-webkit-text-fill-color: darkgoldenrod;">
+                            <li><i class="fa-solid fa-map-location-dot fa-xl" style="margin-right: 10px;margin-top: 10px;"></i>AHMEDABAD, INDIA</li>
+                            <li><i class="fa-solid fa-envelope fa-xl" style="margin-right: 10px;margin-top: 10px;"></i>careerspecs@gmail.com</span>
+                            </li>
+                            <li><i class="fa-solid fa-tty fa-xl" style="margin-right: 10px;margin-top: 10px;"></i>+919426570429</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- End Footer -->
+    <div class="footer_bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <p class="crp" style="-webkit-text-fill-color: gainsboro;">© Copyrights 2023 design by HIKHUKO</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a href="#" id="scroll-to-top" class="hvr-radial-out"><i class="fa fa-angle-up"></i></a>
+    <!-- ALL JS FILES -->
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <!-- ALL PLUGINS -->
+    <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'js/jquery.pogo-slider.min.js' %}"></script>
+    <script src="{% static 'js/slider-index.js' %}"></script>
+    <script src="{% static 'js/smoothscroll.js' %}"></script>
+    <script src="{% static 'js/form-validator.min.js' %}"></script>
+    <script src="{% static 'js/contact-form-script.js' %}"></script>
+    <script src="{% static 'js/isotope.min.js' %}"></script>
+    <script src="{% static 'js/images-loded.min.js' %}"></script>
+    <script src="{% static 'js/custom.js' %}"></script>
+    <script>
+        /* counter js */
+
+        (function($) {
+            $.fn.countTo = function(options) {
+                options = options || {};
+
+                return $(this).each(function() {
+                    // set options for current element
+                    var settings = $.extend({}, $.fn.countTo.defaults, {
+                        from: $(this).data('from'),
+                        to: $(this).data('to'),
+                        speed: $(this).data('speed'),
+                        refreshInterval: $(this).data('refresh-interval'),
+                        decimals: $(this).data('decimals')
+                    }, options);
+
+                    // how many times to update the value, and how much to increment the value on each update
+                    var loops = Math.ceil(settings.speed / settings.refreshInterval),
+                        increment = (settings.to - settings.from) / loops;
+
+                    // references & variables that will change with each update
+                    var self = this,
+                        $self = $(this),
+                        loopCount = 0,
+                        value = settings.from,
+                        data = $self.data('countTo') || {};
+
+                    $self.data('countTo', data);
+
+                    // if an existing interval can be found, clear it first
+                    if (data.interval) {
+                        clearInterval(data.interval);
+                    }
+                    data.interval = setInterval(updateTimer, settings.refreshInterval);
+
+                    // initialize the element with the starting value
+                    render(value);
+
+                    function updateTimer() {
+                        value += increment;
+                        loopCount++;
+
+                        render(value);
+
+                        if (typeof(settings.onUpdate) == 'function') {
+                            settings.onUpdate.call(self, value);
+                        }
+
+                        if (loopCount >= loops) {
+                            // remove the interval
+                            $self.removeData('countTo');
+                            clearInterval(data.interval);
+                            value = settings.to;
+
+                            if (typeof(settings.onComplete) == 'function') {
+                                settings.onComplete.call(self, value);
+                            }
+                        }
+                    }
+
+                    function render(value) {
+                        var formattedValue = settings.formatter.call(self, value, settings);
+                        $self.html(formattedValue);
+                    }
+                });
+            };
+
+            $.fn.countTo.defaults = {
+                from: 0, // the number the element should start at
+                to: 0, // the number the element should end at
+                speed: 1000, // how long it should take to count between the target numbers
+                refreshInterval: 100, // how often the element should be updated
+                decimals: 0, // the number of decimal places to show
+                formatter: formatter, // handler for formatting the value before rendering
+                onUpdate: null, // callback method for every time the element is updated
+                onComplete: null // callback method for when the element finishes updating
+            };
+
+            function formatter(value, settings) {
+                return value.toFixed(settings.decimals);
+            }
+        }(jQuery));
+
+        jQuery(function($) {
+            // custom formatting example
+            $('.count-number').data('countToOptions', {
+                formatter: function(value, options) {
+                    return value.toFixed(options.decimals).replace(/\B(?=(?:\d{3})+(?!\d))/g, ',');
+                }
+            });
+
+            // start all the timers
+            $('.timer').each(count);
+
+            function count(options) {
+                var $this = $(this);
+                options = $.extend({}, options || {}, $this.data('countToOptions') || {});
+                $this.countTo(options);
+            }
+        });
+    </script>
+    <!-- JS for checking login/logout activites.-->
+    <script>
+        function getCookie(name) {
+            const value = `; ${document.cookie}`;
+            const parts = value.split(`; ${name}=`);
+            if (parts.length === 2) return parts.pop().split(';').shift();
+        }
+        isLoggedIn = getCookie("isLoggedIn")
+        if (isLoggedIn == "True") {
+            document.getElementById("IsLoggedIn").style.display = "contents"
+            document.getElementById("IsNotLoggedIn").style.display = "none"
+        } else {
+            document.getElementById("IsLoggedIn").style.display = "none"
+            document.getElementById("IsNotLoggedIn").style.display = "contents"
+        }
+    </script>
+</body>
+
+</html>
