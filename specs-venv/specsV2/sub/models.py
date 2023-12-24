@@ -1,5 +1,6 @@
 from django.db import models
 from phonenumber_field.modelfields import PhoneNumberField
+from django import forms
 
 
 # Create your models here.
@@ -36,3 +37,53 @@ class Feedback(models.Model):
 
     def __str__(self):
         return f"{self.submitter} - {self.feedback}"
+
+class Student(models.Model):
+    id = models.AutoField(primary_key=True)
+    first_name = models.CharField(max_length=255)
+    last_name = models.CharField(max_length=255)
+    date_of_birth = models.DateField()
+
+    email = models.EmailField()
+    seat_no = models.CharField(max_length=20)
+    stream = models.CharField(max_length=50)
+
+    subject_choices = [
+        ('Chemistry', 'Chemistry'),
+        ('Physics', 'Physics'),
+        ('Biology', 'Biology'),
+        ('Maths', 'Maths'),
+        ('English', 'English'),
+        ('Computer', 'Computer'),
+        ('P.T', 'P.T'),
+        ('Sanskrit', 'Sanskrit'),
+        # Add more subjects as needed
+    ]
+
+    subject1 = models.CharField(max_length=50, choices=subject_choices)
+    marks1 = models.IntegerField()
+
+    subject2 = models.CharField(max_length=50, choices=subject_choices)
+    marks2 = models.IntegerField()
+
+    subject3 = models.CharField(max_length=50, choices=subject_choices)
+    marks3 = models.IntegerField()
+
+    skills = models.TextField(max_length=250)
+
+    interested_subjects = models.TextField(max_length=250)
+
+    def get_skills_list(self):
+        return [skill.strip() for skill in self.skills.split(',') if skill.strip()]
+
+    def set_skills_list(self, skills_list):
+        self.skills = ', '.join(skills_list)
+
+    def get_interested_subjects_list(self):
+        return [subject.strip() for subject in self.interested_subjects.split(',') if subject.strip()]
+
+    def set_interested_subjects_list(self, interested_subjects_list):
+        self.interested_subjects = ', '.join(interested_subjects_list)
+
+    def __str__(self):
+        return f" {self.id}-{self.first_name} {self.last_name} "

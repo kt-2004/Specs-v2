@@ -1,11 +1,12 @@
+from datetime import datetime
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.shortcuts import redirect,render
 from django.views.decorators.csrf import csrf_exempt
 from .models import *
+from .forms import *
 from django.core.mail import EmailMessage
 import random
-from django import template
 
 # Create your views here.
 
@@ -135,3 +136,27 @@ def SendEmail(email,request):
     email = EmailMessage('OTP', otp ,to=[email])
     email.send()
     return otp
+def fillform(request):
+    if not get_referer(request):
+        return HttpResponse("<h1>Please Login first.</h1>")
+    if request.method == 'POST':
+        Student.objects.create(
+            first_name = request.POST["first_name"],
+            last_name = request.POST["last_name"],
+            date_of_birth = datetime.strptime(request.POST["date_of_birth"], '%Y-%m-%d').date(),
+            email = request.POST["email"],
+            seat_no = request.POST["seat_no"],
+            stream = request.POST["stream"],
+            subject1 = request.POST.getlist("subject[]")[0],
+            subject2 = request.POST.getlist("subject[]")[1],
+            subject3 = request.POST.getlist("subject[]")[2],
+            marks1 = int(request.POST["marks1"]),
+            marks2 = int(request.POST["marks2"]),
+            marks3 = int(request.POST["marks3"]),
+            skills = ((str(request.POST.getlist("skills[]")).replace("[","")).replace("]","")).replace("\'",""),
+            interested_subjects = ((str(request.POST.getlist("interested_subjects[]"))).replace('[', '')).replace(']', '').replace("\'","")
+        )
+        return HttpResponse("Form submitted successfully!")
+    else:
+        print("No form found")
+    return render(request,"fillform.html")
