@@ -57,6 +57,17 @@ class Student(models.Model):
         ('Computer', 'Computer'),
         ('P.T', 'P.T'),
         ('Sanskrit', 'Sanskrit'),
+        ('Accounts','Accounts'),
+        ('Statistics','Statistics'),
+        ('Economics','Economics'),
+        ('Business Administration','Business Administration'),
+        ('Gujarati','Gujarati'),
+        ('Yoga & Health','Yoga & Health'),
+        ('Political Science','Political Science'),
+        ('History','History'),
+        ('Geography','Geography'),
+        ('Accounting','Accounting'),
+        ('Sociology','Sociology'),
         # Add more subjects as needed
     ]
 
