@@ -1,0 +1,30 @@
+Question,optionA,optionB,optionC,optionD,Answer
+Q. What does HTML stand for?,A) HyperText Markup Language,B) High-Level Texting Machine Language,C) Hyper Transfer Markup Language,D) Hyperlink and Text Markup Language,Answer: A
+"Q. In JavaScript, which keyword is used to declare a variable?",A) var,B) int,C) string,D) declare,Answer: A
+Q. What does CSS stand for in web development?,A) Counter Style Sheets,B) Cascading Style Sheets,C) Computer Style Sheets,D) Colorful Style Sheets,Answer: B
+Q. Which programming language is commonly used for building Android applications?,A) Swift,B) Java,C) C#,D) Python,Answer: B
+"Q. What is the purpose of the ""if"" statement in programming?",A) Looping,B) Decision making,C) Variable declaration,D) Function definition,Answer: B
+Q. What is the output of the following code snippet in Python: print(3 + '2')?,A) 32,B) 5,C) 6,D) TypeError,Answer: D
+Q. Which data type is used to store a sequence of characters in programming?,A) int,B) float,C) char,D) string,Answer: D
+"Q. What is the purpose of the ""else"" statement in an ""if-else"" construct?",A) To start a new condition,B) To handle errors,C) To provide an alternative action,D) To end the program,Answer: C
+Q. Which operator is used for exponentiation in many programming languages?,A) **,B) ^,C) *,D) //,Answer: A
+"Q. In Java, what is the keyword used for the inheritance of classes?",A) extends,B) inherits,C) derives,D) subclass,Answer: A
+Q. What is the primary purpose of the SQL language?,A) Programming games,B) Creating web pages,C) Managing databases,D) Network security,Answer: C
+Q. Which of the following is not a valid variable name in most programming languages?,A) my_variable,B) 1stPlace,C) total_count,D) user_input,Answer: B
+"Q. In Python, what does the ""len()"" function do?",A) Returns the largest value in a list,B) Returns the length of a string or list,C) Checks if a variable is defined,D) Finds the square root of a number,Answer: B
+Q. What does API stand for in the context of web development?,A) Application Programming Interface,B) Advanced Program Interaction,C) Automated Programming Interface,D) Application Process Integration,Answer: A
+Q. Which of the following is a front-end web development framework?,A) Django,B) Flask,C) React,D) Express.js,Answer: C
+"Q. What is the purpose of the ""git"" version control system?",A) Managing databases,B) Tracking changes in source code,C) Creating graphical interfaces,D) Writing scripts,Answer: B
+"Q. In programming, what is a ""loop""?",A) A programming error,B) A repetitive sequence of code,C) A conditional statement,D) A type of variable,Answer: B
+Q. Which programming language is often used for data analysis and machine learning?,A) Java,B) C++,C) R,D) Ruby,Answer: C
+"Q. What is the purpose of the ""try"" and ""except"" blocks in Python?",A) Defining functions,B) Handling errors,C) Creating loops,D) Importing libraries,Answer: B
+Q. Which symbol is used for single-line comments in many programming languages?,A) //,B) /* */,C) #,D) --,Answer: A
+Q. What is the output of the following code snippet in JavaScript: console.log(2 + '2')?,A) 4,B) 22,C) 2,D) TypeError,Answer: B
+Q. Which of the following is a relational database management system?,A) MongoDB,B) MySQL,C) Redis,D) Cassandra,Answer: B
+Q. What does CSS Grid layout provide in web development?,A) Server-side scripting,B) Database management,C) Page layout control,D) Machine learning,Answer: C
+"Q. What does the acronym ""URL"" stand for?",A) Uniform Resource Locator,B) Universal Resource Locator,C) Unified Resource Locator,D) Unique Resource Locator,Answer: A
+"Q. In Python, what is the purpose of the ""elif"" statement?",A) To end the program,B) To handle exceptions,C) To define a function,D) To specify an alternative condition,Answer: D
+Q. Which programming language is often used for creating dynamic web pages?,A) HTML,B) CSS,C) JavaScript,D) SQL,Answer: C
+Q. What is the output of the following code snippet in Python: print(5 / 2)?,A) 2.5,B) 2,C) 2.0,D) 2.25,Answer: A
+"Q. What is the purpose of the ""break"" statement in programming?",A) To end a loop prematurely,B) To skip the next iteration of a loop,C) To define a function,D) To handle errors,Answer: A
+Q. Which of the following is a valid CSS selector to target all paragraphs in HTML?,A) #paragraph,B) .paragraph,C) p,D) *,Answer: C

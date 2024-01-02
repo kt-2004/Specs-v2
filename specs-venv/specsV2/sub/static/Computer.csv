@@ -1,0 +1,30 @@
+Question,optionA,optionB,optionC,optionD,Answer
+Q. What does CPU stand for in computing?,A) Central Processing Unit,B) Central Program Unit,C) Computer Processing Unit,D) Central Peripheral Unit,Answer: A
+Q. What is the main function of the RAM (Random Access Memory) in a computer?,A) Long-term storage,B) Temporary storage of data and program code,C) Processing data,D) Controlling input/output devices,Answer: B
+Q. Which programming language is often used for web development and design?,A) Java,B) Python,C) HTML,D) C++,Answer: C
+Q. What is the purpose of an operating system in a computer?,A) Run applications,B) Manage hardware resources,C) Provide internet connectivity,D) All of the above,Answer: D
+"Q. In the context of computer graphics, what does GPU stand for?",A) Graphics Processing Unit,B) General Processing Unit,C) Graphical Performance Unit,D) General Peripheral Unit,Answer: A
+Q. What is the binary equivalent of the decimal number 25?,A) 11001,B) 11101,C) 10011,D) 10101,Answer: C
+"Q. Which data structure follows the Last In, First Out (LIFO) principle?",A) Queue,B) Stack,C) Linked List,D) Array,Answer: B
+Q. What is the purpose of a compiler in programming?,A) Execute code,B) Convert high-level code to machine code,C) Debug code,D) Write code,Answer: B
+Q. Which protocol is used for secure communication over a computer network?,A) FTP,B) HTTP,C) HTTPS,D) SMTP,Answer: C
+Q. What does HTML stand for in web development?,A) Hyperlink and Text Markup Language,B) Hyper Text Makeup Language,C) Hyper Transfer Markup Language,D) HyperText Markup Language,Answer: D
+Q. What is the role of a firewall in network security?,A) Monitor network traffic,B) Block unauthorized access,C) Allow secure communication,D) All of the above,Answer: D
+Q. Which programming paradigm is associated with object-oriented programming (OOP)?,A) Procedural,B) Declarative,C) Functional,D) Object-oriented,Answer: D
+Q. What is the purpose of SQL in database management?,A) Create websites,B) Manage data in relational databases,C) Develop software applications,D) Network communication,Answer: B
+Q. Which file format is commonly used for compressing a group of files into a single archive?,A) ZIP,B) TAR,C) EXE,D) RAR,Answer: A
+Q. What is the function of an IP address in networking?,A) Identify a device on a network,B) Manage memory allocation,C) Execute code,D) All of the above,Answer: A
+Q. What is the primary purpose of an index in a database?,A) Speed up data retrieval,B) Create data redundancy,C) Manage access permissions,D) Establish data relationships,Answer: A
+Q. Which programming language is known for its use in data analysis and scientific computing?,A) Java,B) Python,C) C++,D) Ruby,Answer: B
+Q. What is the purpose of a loop in programming?,A) Display user interfaces,B) Execute a block of code repeatedly,C) Connect to a database,D) Handle errors in code,Answer: B
+"Q. In the context of networking, what does LAN stand for?",A) Local Access Network,B) Large Area Network,C) Local Area Network,D) Longitudinal Area Network,Answer: C
+Q. What is the function of DNS (Domain Name System) in computer networks?,A) Encrypt data transmission,B) Translate domain names to IP addresses,C) Manage user authentication,D) Control network traffic,Answer: B
+Q. Which data type is used to store whole numbers in programming?,A) Float,B) Double,C) Integer,D) String,Answer: C
+"Q. What is the purpose of an ""if"" statement in programming?",A) Define a function,B) Control the flow of code based on a condition,C) Declare a variable,D) Perform mathematical operations,Answer: B
+Q. What does GUI stand for in computing?,A) Graphical User Interface,B) General User Interface,C) Grouped User Interface,D) Generalized User Interface,Answer: A
+Q. Which programming language is commonly used for system scripting in Unix-based operating systems?,A) Python,B) Bash,C) C#,D) Ruby,Answer: B
+Q. What is the purpose of a function in programming?,A) Display graphics,B) Perform a specific task or calculation,C) Establish network connections,D) Manage memory allocation,Answer: B
+"Q. In relational databases, what is a primary key?",A) A key used for encryption,B) A unique identifier for a record in a table,C) A password for database access,D) A secondary index for faster retrieval,Answer: B
+Q. Which programming language is used for creating dynamic web pages?,A) Java,B) HTML,C) JavaScript,D) CSS,Answer: C
+"Q. What is the purpose of the ""else"" statement in programming?",A) Execute a block of code only if a condition is true,B) Execute a block of code only if a condition is false,C) Declare a variable,D) Define a function,Answer: B
+Q. What is the role of an assembler in programming?,A) Convert high-level code to machine code,B) Debug code,C) Manage memory allocation,D) Translate assembly code to machine code,Answer: D

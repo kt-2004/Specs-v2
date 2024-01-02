@@ -1,6 +1,5 @@
 from django.db import models
 from phonenumber_field.modelfields import PhoneNumberField
-from django import forms
 
 
 # Create your models here.
@@ -42,7 +41,7 @@ class Student(models.Model):
     id = models.AutoField(primary_key=True)
     first_name = models.CharField(max_length=255)
     last_name = models.CharField(max_length=255)
-    date_of_birth = models.DateField()
+    date_of_birth = models.DateField(null=True)
 
     email = models.EmailField()
     seat_no = models.CharField(max_length=20)
@@ -62,7 +61,6 @@ class Student(models.Model):
         ('Economics','Economics'),
         ('Business Administration','Business Administration'),
         ('Gujarati','Gujarati'),
-        ('Yoga & Health','Yoga & Health'),
         ('Political Science','Political Science'),
         ('History','History'),
         ('Geography','Geography'),
@@ -72,13 +70,13 @@ class Student(models.Model):
     ]
 
     subject1 = models.CharField(max_length=50, choices=subject_choices)
-    marks1 = models.IntegerField()
+    marks1 = models.IntegerField(default=0)
 
     subject2 = models.CharField(max_length=50, choices=subject_choices)
-    marks2 = models.IntegerField()
+    marks2 = models.IntegerField(default=0)
 
     subject3 = models.CharField(max_length=50, choices=subject_choices)
-    marks3 = models.IntegerField()
+    marks3 = models.IntegerField(default=0)
 
     skills = models.TextField(max_length=250)
 
@@ -97,4 +95,16 @@ class Student(models.Model):
         self.interested_subjects = ', '.join(interested_subjects_list)
 
     def __str__(self):
-        return f" {self.id}-{self.first_name} {self.last_name} "
+        return f"{self.id}-{self.first_name} {self.last_name}"
+
+class MCQ(models.Model):
+    id = models.AutoField(primary_key=True)
+    subject = models.CharField(max_length=255,default="timepass")
+    question = models.TextField(max_length=255)
+    optionA = models.TextField(max_length=255)
+    optionB = models.TextField(max_length=255)
+    optionC = models.TextField(max_length=255)
+    optionD = models.TextField(max_length=255)
+    correct = models.CharField(max_length=2)
+    def __str__(self):
+        return f"{self.subject} {self.id}"

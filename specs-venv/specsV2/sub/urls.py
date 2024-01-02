@@ -14,5 +14,7 @@ urlpatterns = [
     path('register/',views.register,name='register'),
     path('logout/',views.logout,name='logout'),
     path('fillform/',views.fillform,name='fillform'),
+    path('mcq/',views.mcq,name='mcq'),
+    path('add/',views.add_to_db,name='add'),
 
 ]    

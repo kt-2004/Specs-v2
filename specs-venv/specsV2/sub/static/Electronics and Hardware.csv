@@ -1,0 +1,50 @@
+Question,optionA,optionB,optionC,optionD,Answer
+Q. What does CPU stand for in computing?,A) Central Processing Unit,B) Central Program Unit,C) Computer Processing Unit,D) Central Peripheral Unit,Answer: A
+Q. Which component is known as the brain of the computer?,A) RAM,B) Hard Drive,C) CPU,D) GPU,Answer: C
+Q. What does RAM stand for in computing?,A) Read-Only Memory,B) Random Access Memory,C) Remote Access Memory,D) Read Access Memory,Answer: B
+Q. Which of the following is a volatile memory type?,A) ROM,B) EEPROM,C) RAM,D) Flash Memory,Answer: C
+Q. What is the purpose of the motherboard in a computer?,A) Store data,B) Connect various components,C) Execute instructions,D) Display graphics,Answer: B
+Q. Which component is responsible for storing permanent data in a computer?,A) RAM,B) Hard Drive,C) CPU,D) GPU,Answer: B
+Q. What is the function of the GPU in a computer?,A) Execute instructions,B) Store data,C) Display graphics,D) Manage network connections,Answer: C
+Q. What does BIOS stand for in computing?,A) Basic Input/Output System,B) Binary Input/Output System,C) Base Input/Output System,D) Basic Integrated Output System,Answer: A
+Q. What is the purpose of an expansion slot on a motherboard?,A) Connect peripherals,B) Store data,C) Execute instructions,D) Display graphics,Answer: A
+Q. Which type of storage device is known for its fast data access but is volatile?,A) Hard Drive,B) SSD (Solid State Drive),C) RAM,D) DVD,Answer: C
+Q. What does USB stand for in the context of computer connections?,A) Universal Serial Bus,B) United System Bus,C) Uniform System Bus,D) Ultra Speed Bus,Answer: A
+Q. What is the purpose of a CPU cache?,A) Store frequently used programs and data,B) Connect peripherals,C) Execute instructions,D) Display graphics,Answer: A
+Q. Which type of memory retains its data even when the power is turned off?,A) RAM,B) Cache,C) ROM,D) Flash Memory,Answer: C
+Q. What is the purpose of the power supply unit (PSU) in a computer?,A) Store data,B) Convert and supply power to components,C) Execute instructions,D) Display graphics,Answer: B
+Q. What does RAID stand for in data storage?,A) Redundant Array of Independent Disks,B) Random Access Independent Drives,C) Rapid Access of Integrated Data,D) Remote Array of Internal Drives,Answer: A
+Q. Which port is commonly used for connecting external hard drives to a computer?,A) USB,B) HDMI,C) VGA,D) Ethernet,Answer: A
+Q. What is the purpose of the heat sink in a computer?,A) Store data,B) Remove heat from the CPU,C) Execute instructions,D) Display graphics,Answer: B
+Q. What is the function of the Northbridge on a motherboard?,A) Manage communication between CPU and RAM,B) Manage communication between CPU and GPU,C) Manage communication between peripherals,D) Manage network connections,Answer: A
+Q. What does HDMI stand for in the context of video and audio connections?,A) High-Definition Multimedia Interface,B) High-Speed Data Interface,C) Hyperlink System for Multimedia Integration,D) Hybrid Digital Media Interface,Answer: A
+Q. What is the purpose of the CMOS battery on a motherboard?,A) Store data,B) Provide power to the CPU,C) Manage network connections,D) Retain system settings and the real-time clock,Answer: D
+Q. What is the primary function of a router in a computer network?,A) Connect devices within a local network,B) Store data,C) Execute instructions,D) Display graphics,Answer: A
+Q. Which component is responsible for managing data traffic between the CPU and other components?,A) RAM,B) Southbridge,C) Northbridge,D) GPU,Answer: B
+Q. What is the purpose of the BIOS in a computer system?,A) Display graphics,B) Execute instructions,C) Manage network connections,D) Initialize hardware during the boot process,Answer: D
+Q. Which of the following is an example of an input device?,A) Printer,B) Monitor,C) Keyboard,D) Speakers,Answer: C
+Q. Which type of memory is non-volatile and used for firmware storage?,A) RAM,B) Cache,C) ROM,D) Flash Memory,Answer: C
+Q. What does LAN stand for in networking?,A) Local Area Network,B) Long Area Network,C) Logical Access Network,D) Large Array Network,Answer: A
+Q. What is the purpose of the GPU in graphics cards?,A) Store data,B) Execute instructions,C) Manage network connections,D) Render graphics,Answer: D
+Q. Which type of display technology uses organic compounds to produce light?,A) LED,B) LCD,C) OLED,D) Plasma,Answer: C
+Q. What does IP address stand for in networking?,A) Internet Protocol Address,B) Internal Processing Address,C) Intranet Port Address,D) Integrated Protocol Address,Answer: A
+Q. Which component is responsible for managing communication between the CPU and other devices in a computer?,A) RAM,B) Southbridge,C) Northbridge,D) GPU,Answer: B
+"Q. In networking, what does WAN stand for?",A) Wireless Area Network,B) Wide Access Network,C) Wide Area Network,D) Wired Area Network,Answer: C
+Q. What is the function of an optical drive in a computer?,A) Display graphics,B) Execute instructions,C) Store and read optical discs,D) Manage network connections,Answer: C
+Q. Which of the following is an example of an output device?,A) Mouse,B) Printer,C) Keyboard,D) Scanner,Answer: B
+Q. What does UPS stand for in computing?,A) Uninterruptible Power Supply,B) Universal Power System,C) Unidirectional Power Source,D) Unified Protection System,Answer: A
+Q. Which type of connector is commonly used for connecting audio devices?,A) HDMI,B) USB,C) VGA,D) 3.5mm Jack,Answer: D
+Q. What is the purpose of the Firewall in a computer network?,A) Display graphics,B) Execute instructions,C) Protect against unauthorized access,D) Manage network connections,Answer: C
+Q. Which port is commonly used for connecting a monitor to a computer?,A) USB,B) HDMI,C) VGA,D) Ethernet,Answer: C
+Q. What is the purpose of an antivirus program in a computer?,A) Display graphics,B) Execute instructions,C) Protect against malware,D) Manage network connections,Answer: C
+Q. What does NFC stand for in the context of wireless communication?,A) Near Field Communication,B) Network File Control,C) National Frequency Code,D) Next-Generation Firewall,Answer: A
+Q. What is the purpose of the CMYK color model in printing?,A) Display graphics,B) Execute instructions,C) Manage network connections,D) Produce color prints,Answer: D
+Q. Which type of cable is commonly used for wired computer networks?,A) HDMI,B) USB,C) Ethernet,D) VGA,Answer: C
+Q. What is the purpose of a sound card in a computer?,A) Display graphics,B) Execute instructions,C) Manage network connections,D) Process audio signals,Answer: D
+Q. Which type of memory is used for long-term storage but is slower than RAM?,A) Cache,B) SSD (Solid State Drive),C) Hard Drive,D) DVD,Answer: C
+Q. What does SSD stand for in data storage?,A) Solid State Drive,B) Serial Storage Device,C) Secure System Drive,D) Sequential Storage Disk,Answer: A
+Q. What is the function of the Southbridge on a motherboard?,A) Manage communication between CPU and RAM,B) Manage communication between CPU and GPU,C) Manage communication between peripherals,D) Manage network connections,Answer: C
+Q. What does WPA stand for in wireless security protocols?,A) Wireless Personal Access,B) Wi-Fi Protected Access,C) Wireless Privacy Algorithm,D) Wireless Public Authentication,Answer: B
+Q. Which type of printer uses a powder called toner?,A) Inkjet Printer,B) Laser Printer,C) Dot Matrix Printer,D) Thermal Printer,Answer: B
+Q. What is the purpose of a network switch?,A) Manage network connections,B) Execute instructions,C) Display graphics,D) Connect various components,Answer: A
+Q. What is the function of a UPS (Uninterruptible Power Supply) in computing?,A) Display graphics,B) Execute instructions,C) Provide backup power during outages,D) Manage network connections,Answer: C

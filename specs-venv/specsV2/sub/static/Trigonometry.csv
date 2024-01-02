@@ -1,0 +1,48 @@
+Question,optionA,optionB,optionC,optionD,Answer
+"Q. In a right-angled triangle, if the tangent of one angle is 0.6, what is the value of the corresponding cotangent?",A) 0.6,B) 1.6,C) 1.7,D) 1.2,Answer: B
+"Q. If sin θ = 0.8, what is the value of cos θ?",A) 0.2,B) 0.4,C) 0.6,D) 0.5,Answer: A
+"Q. In a triangle ABC, if angle B is 45 degrees, what is the measure of angle C?",A) 45 degrees,B) 90 degrees,C) 60 degrees,D) 30 degrees,Answer: C
+"Q. If sec α = 2, what is the value of cos α?",A) 0.5,B) 0.7,C) 0.8,D) 1.2,Answer: A
+"Q. Given a right-angled triangle XYZ with angle Y as the right angle, if the length of side XY is 15 units and side YZ is 20 units, what is the length of side XZ?",A) 5 units,B) 25 units,C) 18 units,D) 12 units,Answer: A
+"Q. If cot β = 3/4, what is the value of tan β?",A) 0.75,B) 1.25,C) 1.33,D) 0.8,Answer: B
+"Q. In a triangle PQR, if angle P is 60 degrees, what is the measure of angle Q?",A) 30 degrees,B) 90 degrees,C) 60 degrees,D) 120 degrees,Answer: A
+"Q. If cos θ = -0.6, what is the value of sin θ?",A) 0.6,B) -0.8,C) -0.4,D) 0.8,Answer: C
+Q. Solve for x: sin^2(x) + cos^2(x) = 1.,A) x = 0,B) x = π/4,C) x = π/2,D) x = π,Answer: A
+"Q. If tan γ = 5/12, what is the value of sin γ?",A) 0.6,B) 0.4,C) 0.8,D) 0.2,Answer: A
+"Q. If sin α = 0.6, what is the value of cosec α?",A) 1.5,B) 1.2,C) 1.67,D) 1.4,Answer: A
+"Q. In a triangle DEF, if angle D is 90 degrees and sin E = 0.8, what is the length of side EF if side DE is 15 units?",A) 12 units,B) 18 units,C) 20 units,D) 25 units,Answer: B
+Q. Solve for θ in the equation tan(2θ) = 1.,A) π/8,B) π/6,C) π/4,D) π/3,Answer: C
+"Q. If cos β = -0.4, what is the value of sec β?",A) -2.5,B) -2.2,C) -2.67,D) -2.5,Answer: A
+"Q. Given a right-angled triangle ABC with angle C as the right angle, if the length of side AB is 24 units and side AC is 18 units, what is the length of side BC?",A) 30 units,B) 12 units,C) 15 units,D) 20 units,Answer: B
+"Q. If cot γ = 4/3, what is the value of tan γ?",A) 0.75,B) 0.8,C) 1.33,D) 1.25,Answer: C
+"Q. In a triangle PQR, if angle P is 30 degrees and side PQ is 10 units, what is the length of side PR if side QR is 5 units?",A) 5√3 units,B) 5 units,C) 10 units,D) 5√2 units,Answer: B
+Q. Solve for x: cos^2(x) = 0.25.,A) x = π/3,B) x = π/6,C) x = π/2,D) x = π/4,Answer: B
+"Q. If sec δ = -2, what is the value of cos δ?",A) -0.5,B) -0.6,C) -0.4,D) -0.3,Answer: A
+"Q. In a triangle XYZ, if angle Y is 45 degrees and side XZ is 8 units, what is the length of side YZ if side XY is 8√2 units?",A) 8 units,B) 8√3 units,C) 8√2 units,D) 16 units,Answer: B
+"Q. If cos θ = 1/2, what is the value of sin θ?",A) 0.5,B) 0.7,C) 0.8,D) 0.6,Answer: D
+Q. Solve for θ: 3sin(θ) - 2 = 0.,A) sin^(-1)(2/3),B) sin^(-1)(3/2),C) cos^(-1)(2/3),D) cos^(-1)(3/2),Answer: A
+"Q. If tan α = 3/4, what is the value of cot α?",A) 0.75,B) 1.33,C) 1.25,D) 0.8,Answer: C
+"Q. In a right-angled triangle LMN with angle L as the right angle, if the length of side MN is 15 units and side LN is 20 units, what is the length of side LM?",A) 5 units,B) 12 units,C) 25 units,D) 18 units,Answer: A
+"Q. If sin β = -0.6, what is the value of cosec β?",A) -1.67,B) -1.4,C) -1.2,D) -1.5,Answer: D
+Q. Solve for x in the equation tan(x) = √3.,A) π/6,B) π/3,C) π/4,D) π/2,Answer: A
+"Q. If cos θ = 0.8, what is the value of tan θ?",A) 0.75,B) 0.6,C) 0.67,D) 1.25,Answer: D
+"Q. In a triangle ABC, if angle C is 60 degrees, what is the measure of angle A?",A) 30 degrees,B) 90 degrees,C) 60 degrees,D) 120 degrees,Answer: A
+"Q. If sec θ = -1/2, what is the value of cos θ?",A) -0.5,B) -0.8,C) -1,D) -1.5,Answer: C
+"Q. Given a right-angled triangle DEF with angle D as the right angle, if the length of side DE is 12 units and side EF is 9 units, what is the length of side DF?",A) 15 units,B) 18 units,C) 21 units,D) 16.5 units,Answer: A
+Q. Solve for θ in the equation sin(2θ) = 0.5.,A) π/6,B) π/4,C) π/3,D) π/2,Answer: B
+"Q. If cot γ = -3/4, what is the value of tan γ?",A) -0.75,B) -0.8,C) -1.33,D) -1.25,Answer: C
+"Q. In a triangle PQR, if angle P is 45 degrees and side PQ is 12 units, what is the length of side PR if side QR is 12 units?",A) 6√2 units,B) 12 units,C) 6√3 units,D) 6 units,Answer: B
+"Q. If cos x = 1, what is the value of sin x?",A) 0,B) 1,C) -1,D) Undefined,Answer: A
+Q. Solve for x: tan^2(x) = 3.,A) x = π/6,B) x = π/4,C) x = π/3,D) x = π/2,Answer: B
+"Q. If sin δ = -0.3, what is the value of cosec δ?",A) -3.33,B) -3.5,C) -3.2,D) -3.4,Answer: D
+"Q. In a right-angled triangle XYZ with angle Z as the right angle, if the length of side XZ is 16 units and side YZ is 12 units, what is the length of side XY?",A) 20 units,B) 8 units,C) 10 units,D) 18 units,Answer: A
+"Q. If cot β = 5/12, what is the value of tan β?",A) 0.6,B) 0.5,C) 0.8,D) 1.2,Answer: A
+"Q. Given a right-angled triangle ABC with angle B as the right angle, if the length of side AB is 9 units and side AC is 12 units, what is the length of side BC?",A) 15 units,B) 18 units,C) 5 units,D) 8 units,Answer: C
+"Q. If cos γ = 0.6, what is the value of sec γ?",A) 1.67,B) 1.2,C) 1.4,D) 1.5,Answer: A
+"Q. In a triangle PQR, if angle P is 60 degrees and side PR is 8 units, what is the length of side PQ if side QR is 8√3 units?",A) 4 units,B) 8 units,C) 4√3 units,D) 8√2 units,Answer: B
+"Q. If tan θ = 4/3, what is the value of cot θ?",A) 0.75,B) 0.8,C) 1.33,D) 1.25,Answer: C
+Q. Solve for θ: sin^2(θ) = 0.16.,A) θ = π/5,B) θ = π/4,C) θ = π/6,D) θ = π/3,Answer: B
+"Q. If cos α = -0.8, what is the value of sin α?",A) -0.6,B) -0.5,C) -0.4,D) -0.6,Answer: A
+"Q. In a right-angled triangle LMN with angle M as the right angle, if the length of side LN is 15 units and side MN is 9 units, what is the length of side LM?",A) 12 units,B) 18 units,C) 21 units,D) 16.5 units,Answer: A
+"Q. If cot δ = 3/4, what is the value of tan δ?",A) 0.75,B) 0.8,C) 1.33,D) 1.25,Answer: C
+Q. Solve for x in the equation cos^2(x) - sin^2(x) = 0.,A) x = π/4,B) x = π/6,C) x = π/3,D) x = π/2,Answer: A

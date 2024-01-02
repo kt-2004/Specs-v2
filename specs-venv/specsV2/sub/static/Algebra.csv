@@ -1,0 +1,20 @@
+Question,optionA,optionB,optionC,optionD,Answer
+"Q. If \( (x - 3)^2 = 16 \), what are the possible values of \( x \)?","A) \( x = -1, 7 \)  ","B) \( x = -5, 1 \)  ","C) \( x = -7, 5 \)  ","D) \( x = -4, 10 \)",Answer:C
+Q.Solve the inequality \( 2x^2 - 5x + 3 > 0 \). What is the solution set?,A) \( x < \frac{1}{2} \) or \( x > 3 \)  ,B) \( x < 1 \) or \( x > \frac{3}{2} \)  ,C) \( x < \frac{3}{2} \) or \( x > 1 \)  ,D) \( x < \frac{3}{2} \) or \( x > 2 \),Answer:A 
+"Q.If \( \frac{2x - 1}{3} + 5 = \frac{4 - x}{2} \), what is the value of \( x \)?",A) \( x = -11 \)  ,B) \( x = 9 \)  ,C) \( x = -9 \)  ,D) \( x = 11 \),Answer:D 
+"Q.The sum of two numbers is 15, and their product is 54. What are the numbers?","A) 6, 9  ","B) 7, 8  ","C) 5, 10  ","D) 3, 12",Answer:A 
+Q.Solve the system of equations:\[\begin{align*}2x + 3y &= 7 \\4x - y &= 5\end{align*}\],"A) \( x = 2, \; y = 1 \)  ","B) \( x = 3, \; y = 2 \)  ","C) \( x = 1, \; y = 2 \)  ","D) \( x = 2, \; y = -1 \)",Answer:C 
+Q.Factorize the expression \( 4x^2 - 9 \).,A) \( (2x + 3)(2x - 3) \)  ,B) \( (2x - 3)(2x - 3) \)  ,C) \( (4x + 3)(4x - 3) \)  ,D) \( (4x - 3)(4x + 3) \),Answer:A
+"Q.If \( \frac{3}{x-2} + \frac{1}{x} = \frac{4}{x^2 - 2x} \), what is the value of \( x \)?",A) \( x = -1 \)  ,B) \( x = 2 \)  ,C) \( x = 3 \)  ,D) \( x = 4 \),Answer:B 
+Q.Solve the system of equations:\[\begin{align*}3x - 2y &= 4 \\2x + y &= 1\end{align*}\],"A) \( x = 2, \; y = 1 \)  ","B) \( x = 1, \; y = -2 \)  ","C) \( x = -1, \; y = -2 \)  ","D) \( x = 2, \; y = -1 \)",Answer:A
+Q.Simplify the expression \( \frac{5x^2 - 10x}{x^2 - 4} \).,A) \( \frac{5(x - 2)}{(x - 2)(x + 2)} \)  ,B) \( \frac{5(x - 2)}{(x - 2)(x - 2)} \)  ,C) \( \frac{5(x + 2)}{(x + 2)(x - 2)} \)  ,D) \( \frac{5(x + 2)}{(x + 2)(x + 2)} \),Answer:C
+"Q.If \( \sqrt{3x} = 5 \), what is the value of \( x \)?",A) \( x = 4 \)  ,B) \( x = 5 \)  ,C) \( x = 6 \)  ,D) \( x = 7 \),Answer:B
+Q.Factorize the quadratic expression \( 6x^2 + 17x + 10 \).,A) \( (2x + 5)(3x + 2) \)  ,B) \( (2x + 2)(3x + 5) \)  ,C) \( (2x + 1)(3x + 10) \)  ,D) \( (2x + 10)(3x + 1) \),Answer:A
+Q.Solve the inequality \( 2x^2 - 3x - 5 \leq 0 \). What is the solution set?,A) \( x \leq -1 \) or \( x \geq 5/2 \)  ,B) \( x \geq -1 \) or \( x \leq 5/2 \)  ,C) \( x \leq -5/2 \) or \( x \geq 1 \)  ,D) \( x \geq -5/2 \) or \( x \leq 1 \),Answer:A
+"Q.If \( \frac{2}{x-1} - \frac{3}{x} = \frac{1}{x+1} \), what is the value of \( x \)?",A) \( x = -2 \)  ,B) \( x = 1 \)  ,C) \( x = 2 \)  ,D) \( x = 3 \),Answer:C
+Q.Simplify the expression \( \frac{4}{x+3} + \frac{2}{x-1} \).,A) \( \frac{6x + 14}{x^2 + 2x - 3} \)  ,B) \( \frac{6x + 14}{x^2 + 2x - 15} \)  ,C) \( \frac{6x + 14}{x^2 + 2x + 3} \)  ,D) \( \frac{6x + 14}{x^2 + 2x + 15} \),Answer:A
+Q.Solve the system of equations:\[\begin{align*}2x + y &= 7 \\4x - 3y &= 10\end{align*}\],"A) \( x = 2, \; y = 3 \)  ","B) \( x = 3, \; y = 1 \)  ","C) \( x = 1, \; y = 2 \)  ","D) \( x = 2, \; y = -1 \)",Answer:B
+Q.Factorize the quadratic expression \( 5x^2 - 15x + 10 \).,A) \( 5(x - 2)^2 \)  ,B) \( 5(x - 1)^2 \)  ,C) \( 5(x - 2)(x - 1) \)  ,D) \( 5(x - 1)(x - 2) \),Answer:D
+"Q.If \( \frac{2}{x-3} + \frac{3}{x} = \frac{5}{x+3} \), what is the value of \( x \)?",A) \( x = 1 \)  ,B) \( x = 2 \)  ,C) \( x = 3 \)  ,D) \( x = 4 \),Answer:A
+Q.Simplify the expression \( \frac{3x^2 - 12}{x^2 - 4} \).,A) \( \frac{3(x - 2)}{(x - 2)(x + 2)} \)  ,B) \( \frac{3(x - 2)}{(x - 2)(x - 2)} \)  ,C) \( \frac{3(x + 2)}{(x + 2)(x - 2)} \)  ,D) \( \frac{3(x + 2)}{(x + 2)(x + 2)} \),Answer:A
+Q.Solve the system of equations:\[\begin{align*}3x - y &= 5 \\x + 2y &= 4\end{align*}\],"A) \( x = 2, \; y = 1 \)  ","B) \( x = 1, \; y = -2 \)  ","C) \( x = -1, \; y = -2 \)  ","D) \( x = 2, \; y = -1 \)",Answer:A

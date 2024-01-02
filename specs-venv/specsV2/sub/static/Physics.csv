@@ -1,0 +1,13 @@
+Question,optionA,optionB,optionC,optionD,Answer
+Q. What is the SI unit of electric charge?,A) Volt,B) Ampere,C) Coulomb,D) Ohm,Answer: C
+Q. Which of the following statements about vectors is true?,A) Vectors obey the commutative law of addition.,B) Vectors do not have a direction.,C) Vectors cannot be added or subtracted.,D) Vectors follow the associative law of addition.,Answer: D
+"Q. According to the law of conservation of energy, in a closed system:",A) Energy cannot be created but can be destroyed.,B) Energy can be created but cannot be destroyed.,C) Energy can neither be created nor destroyed.,D) Energy is continuously created.,Answer: C
+Q. The work done by a force is defined as the product of:,A) Force and distance moved in the direction of the force.,B) Mass and acceleration.,C) Force and velocity.,D) Force and time.,Answer: A
+"Q. According to Coulomb's law, the force between two charges is directly proportional to:",A) The product of the charges.,B) The square of the distance between them.,C) The sum of the charges.,D) The square root of the charges.,Answer: A
+Q. The energy of a photon is proportional to its:,A) Wavelength,B) Amplitude,C) Frequency,D) Velocity,Answer: C
+"Q. In the context of nuclear physics, what is the binding energy per nucleon?",A) The total energy of a nucleus.,B) The energy required to break a nucleus into its individual nucleons.,C) The energy released when nucleons come together to form a nucleus.,D) The energy required to change a nucleon into a different particle.,Answer: C
+"Q. If a particle is moving in a circular path of radius r, the displacement after half a circle would be:",A) Zero,B) (pi)r,C) 2r,D) 2(pi)r,Answer: C
+Q. What is the dimensional formula for Planck's constant (h)?,A) ML^2T-1,B) ML^2T-2,C) MLT^-2,D) M^2L^2T^-2,Answer: A
+"Q. If the electric field in a region is radially outward and increases with distance r as E = Ar, where A is a constant, what is the charge density in the region?",A) Constant,B) Proportional to r,C) Proportional to 1/r,D) Proportional to 1/r^2,Answer: D
+"Q. In Young's double-slit experiment, if the path difference is lambda and the intensity of light at a point on the screen is I, what is the intensity when the path difference becomes lambda/4?",A) Zero,B) I/4,C) I/2,D) I,Answer: D
+"Q. If the velocity of a particle is given by (v = at + ut^2), where a and b are constants, what are the dimensions of a and b?",A) [M^0L^1T^-2] and [M^0L^1T^-1] ,B) [M^0L^1T^-1] and [M^0L^1T^-2] ,C) [M^0L^2T^-2] and [M^0L^1T^-1] ,D) [M^0L^2T^-1] and [M^0L^1T^-2] ,Answer: B

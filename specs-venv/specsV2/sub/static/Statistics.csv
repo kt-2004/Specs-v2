@@ -1,0 +1,16 @@
+Question,optionA,optionB,optionC,optionD,Answer
+Q. Range of a data is equal to:,A)Range = Max Value - Min Value,B)Range = Max Value + Min Value,C)Range = (Max Value - Min Value)/2,D)Range = (Max Value + Min Value)/2,Answer: A
+"Q. Relation between mean, median and mode is given by: ",A)Mode = 2 Median - 3 Mean ,B)Mode = 2 Median + 3 Mean ,C)Mode = 3 Median - 2 Mean ,D)Mode = 3 Median + 2 Mean,Answer: C
+"Q. If the variance of the data is 121, the standard deviation of the data is: ",A)121 ,B)11 ,C)12 ,D)21,Answer: B
+Q. The geometric mean of series having mean = 25 and harmonic mean = 16 is: ,A)16 ,B)20 ,C)25 ,D)30,Answer: B
+Q. The coefficient of correlation r satisfies: ,A)|r| < or = 1 ,B)0 < r < 1 ,C)|r| > 1 ,D)- 1 < r < 0,Answer: A
+Q. The coefficient of variation is computed by: ,A)S.D/.Mean*100 ,B)S.D./Mean ,C)Mean./S.D*100 ,D)Mean/S.D.,Answer: A
+"Q. Find the median of 36, 72, 46, 42, 60, 45, 53, 46, 51, 49.",A)42,B)45.5,C)47.5,D)45,Answer: C
+"Q. Find the mean of 6, 7, 10, 12, 13, 4, 8, 12.",A)9,B)10,C)12,D)13,Answer: A
+"Q. If the variance is 625, what is the standard deviation? ",A)5 ,B)15 ,C)25 ,D)None of the above,Answer: C
+"Q. If the difference of mode and median of a data is 24, then the difference of median and mean is:",A)12,B)24,C)8,D)36,Answer: A
+"Q. In a dataset, if the coefficient of skewness is negative, it indicates:",A)Left-skewed distribution,B)Symmetric distribution,C)Normal distribution,D)Right-skewed distribution,Answer: A
+"Q. For a set of data with outliers, which measure of central tendency is more appropriate to use?",A)Mean,B)Median,C)Mode,D)All are equally appropriate,Answer: B
+"Q. If the variance of a dataset is 25, what is the standard deviation?",A)5,B)10,C)25,D)125,Answer: A
+"Q. For a continuous probability distribution, the probability that a random variable takes on a specific value is:",A)Always zero,B)Always one,C)Almost always zero,D)Almost always one,Answer: A
+Q. The Mann-Whitney U test is used for comparing:,A)Means of two independent samples,B)Variances of two independent samples,C)Medians of two independent samples,D)Correlation between two variables,Answer: C

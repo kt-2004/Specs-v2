@@ -76,15 +76,19 @@ WSGI_APPLICATION = 'specsV2.wsgi.application'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 DATABASES = {
-       'default': {
-           'ENGINE': 'django.db.backends.mysql',
-           'NAME': 'specs',
-           'USER': 'root',
-           'PASSWORD': 'root',
-           'HOST': 'localhost',
-           'PORT': '3306',
-       },
-   }
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'specs',
+        'USER': 'root',
+        'PASSWORD': 'root',
+        'HOST': 'localhost',
+        'PORT': '3306',
+        'OPTIONS': {
+            'charset': 'utf8mb4',
+              'use_unicode':True  # This is the important line
+        }
+    },
+}
 
 
 # Password validation
@@ -121,23 +125,25 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
-STATIC_FILES_DIR=[BASE_DIR / "sub/static"]
-STATIC_ROOT = (BASE_DIR /'static')
+STATIC_FILES_DIR = [BASE_DIR / "sub/static"]
+STATIC_ROOT = (BASE_DIR / 'static')
 
 STATIC_URL = 'static/'
 
 SESSION_SAVE_EVERY_REQUEST = True
 
 
-#This code is for sending email for verifying password ...
+# This code is for sending email for verifying password ...
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_USE_TLS = True #tls=Transport Layer Security ,it supports new algorithms for security and encryption purpose.recently this is most commonly in use.
+# tls=Transport Layer Security ,it supports new algorithms for security and encryption purpose.recently this is most commonly in use.
+EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'hikhuko011@gmail.com'
-EMAIL_HOST_PASSWORD = 'gxsvelxjtcemovax'#space between password is not allowed here.
+# space between password is not allowed here.
+EMAIL_HOST_PASSWORD = 'gxsvelxjtcemovax'
 EMAIL_PORT = 587
-EMAIL_USE_SSL=False #ssl=Secure Sockets Layer,it uses older algorithms to provide security of data over internet.less in use due to TLS .
-
+# ssl=Secure Sockets Layer,it uses older algorithms to provide security of data over internet.less in use due to TLS .
+EMAIL_USE_SSL = False
 
 
 # Default primary key field type

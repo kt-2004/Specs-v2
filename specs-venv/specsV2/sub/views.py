@@ -7,6 +7,9 @@ from .models import *
 from .forms import *
 from django.core.mail import EmailMessage
 import random
+import csv
+from django.db import connection
+
 
 # Create your views here.
 
@@ -139,24 +142,79 @@ def SendEmail(email,request):
 def fillform(request):
     if not get_referer(request):
         return HttpResponse("<h1>Please Login first.</h1>")
-    if request.method == 'POST':
-        Student.objects.create(
-            first_name = request.POST["first_name"],
-            last_name = request.POST["last_name"],
-            date_of_birth = datetime.strptime(request.POST["date_of_birth"], '%Y-%m-%d').date(),
-            email = request.POST["email"],
-            seat_no = request.POST["seat_no"],
-            stream = request.POST["stream"],
-            subject1 = request.POST.getlist("subject[]")[0],
-            subject2 = request.POST.getlist("subject[]")[1],
-            subject3 = request.POST.getlist("subject[]")[2],
-            marks1 = int(request.POST["marks1"]),
-            marks2 = int(request.POST["marks2"]),
-            marks3 = int(request.POST["marks3"]),
-            skills = ((str(request.POST.getlist("skills[]")).replace("[","")).replace("]","")).replace("\'",""),
-            interested_subjects = ((str(request.POST.getlist("interested_subjects[]"))).replace('[', '')).replace(']', '').replace("\'","")
-        )
-        return HttpResponse("Form submitted successfully!")
+    isLoggedIn = request.COOKIES.get('isLoggedIn','False')
+    if isLoggedIn=='True':
+        if request.method == 'POST':
+            Student.objects.create(
+                first_name = request.POST["first_name"],
+                last_name = request.POST["last_name"],
+                date_of_birth = datetime.strptime(request.POST["date_of_birth"], '%Y-%m-%d').date(),
+                email = request.POST["email"],
+                seat_no = request.POST["seat_no"],
+                stream = request.POST["stream"],
+                subject1 = request.POST.getlist("subject[]")[0],
+                subject2 = request.POST.getlist("subject[]")[1],
+                subject3 = request.POST.getlist("subject[]")[2],
+                marks1 = int(request.POST["marks1"]),
+                marks2 = int(request.POST["marks2"]),
+                marks3 = int(request.POST["marks3"]),
+                skills = ((str(request.POST.getlist("skills[]")).replace("[","")).replace("]","")).replace("\'",""),
+                interested_subjects = ((str(request.POST.getlist("interested_subjects[]"))).replace('[', '')).replace(']', '').replace("\'","")
+            )
+            request.session["email"] = request.POST["email"]
+            return redirect("/mcq")
+        else:
+            print("No form found")
     else:
-        print("No form found")
+        return HttpResponse("<h1>Please Login first.</h1>")
     return render(request,"fillform.html")
+def mcq(request):
+    if request.method == "POST":
+        score=0
+        for i in request.POST.items():
+            if "answer_" in i[0]:
+                question_id = i[0].replace("answer_","")
+                if MCQ.objects.get(id=question_id).correct == i[1].split(")")[0]:
+                    score+=1
+        request.session["score"]=score
+        # return redirect("/results")
+        return HttpResponse(f"Your score is {score}")
+    temp = []
+    stud = Student.objects.get(email=request.session["email"])
+    with connection.cursor() as cursor:
+        for i in stud.get_interested_subjects_list():
+            cursor.execute(f"SELECT * FROM sub_MCQ WHERE subject='{i}'")
+            temp += list(cursor.fetchall())
+        for i in stud.get_skills_list():
+            cursor.execute(f"SELECT * FROM sub_MCQ WHERE subject='{i}'")
+            temp += list(cursor.fetchall())
+        cursor.execute(f"SELECT * FROM sub_MCQ WHERE subject='{stud.subject1}'")
+        temp += list(cursor.fetchall())
+        cursor.execute(f"SELECT * FROM sub_MCQ WHERE subject='{stud.subject2}'")
+        temp += list(cursor.fetchall())
+        cursor.execute(f"SELECT * FROM sub_MCQ WHERE subject='{stud.subject3}'")
+        temp += list(cursor.fetchall())
+    formatted_temp = []
+    for i in temp:
+        formatted_temp.append([i[1],i[2],i[3],i[4],i[5],i[0]])
+    questions = random.sample(formatted_temp,15)
+    return render(request, 'mcq.html', {'questions':questions})
+def add_to_db(request):
+    with open('sub/static/Algebra.csv', mode ='r',encoding="utf8") as file:
+        csvFile = list(csv.reader(file))
+        for lines in csvFile:
+            if lines != []: 
+                print((lines[5]))
+                try:
+                    MCQ.objects.create(
+                        correct=(lines[5].split(":")[1]).replace(" ",""),
+                        question=lines[0],
+                        optionA=lines[1],
+                        optionB=lines[2],
+                        optionC=lines[3],
+                        optionD=lines[4],
+                        subject="Algebra"
+                    )
+                except:
+                    continue
+    return HttpResponse("check console")
