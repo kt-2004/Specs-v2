@@ -1,0 +1,31 @@
+Question,optionA,optionB,optionC,optionD,Answer
+Q. What does VPN stand for in the context of network security?,A) Virtual Personal Network,B) Virtual Private Network,C) Very Private Network,D) Visual Private Network,Answer: B
+Q. What is the main purpose of a firewall?,A) To encrypt data,B) To filter network traffic,C) To scan for viruses,D) To physically protect servers,Answer: B
+"Q. What does ""HTTPS"" stand for in web browsing?",A) HyperText Transfer Protocol Secure,B) HyperText Text Protocol Server,C) High Transfer Protocol Security,D) Home Text Transfer Protocol Service,Answer: A
+Q. Which one of the following is considered a social engineering attack?,A) Brute force attack,B) SQL Injection,C) Phishing,D) DDoS attack,Answer: C
+Q. What is a keylogger?,A) A physical security device,B) A software that captures keystrokes,C) A hardware used in encryption,D) A device used to bypass firewalls,Answer: B
+Q. What is the most common method used to authenticate users?,A) Passwords,B) Biometric scans,C) Security questions,D) Tokens,Answer: A
+Q. What is the primary aim of a DDoS attack?,A) Stealing sensitive data,B) Encrypting user information,C) Making a network or service unavailable,D) Gaining unauthorized access,Answer: C
+"Q. What does ""Phishing"" typically involve?",A) Gaining physical access to a computer,B) Sending deceptive emails to gather sensitive information,C) Hacking a wireless network,D) Installing spyware on a computer,Answer: B
+Q. What is the role of encryption in cybersecurity?,A) To detect threats,B) To authenticate users,C) To secure data by encoding it,D) To create firewalls,Answer: C
+Q. What is the purpose of a vulnerability assessment?,A) To exploit security weaknesses,B) To identify and prioritize security weaknesses,C) To authenticate users,D) To encrypt data,Answer: B
+Q. Which of the following is a method to ensure data confidentiality?,A) Hashing,B) Digital signatures,C) Encryption,D) Biometrics,Answer: C
+Q. What is the main function of antivirus software?,A) Encrypt data,B) Protect against malware,C) Detect physical intrusions,D) Authenticate users,Answer: B
+"Q. What does the term ""SQL injection"" refer to?",A) Exploiting software vulnerabilities to execute unauthorized SQL queries,B) Intercepting and modifying network traffic,C) Sending a large volume of requests to overload a server,D) Hacking into a database server using brute force,Answer: A
+Q. What is the purpose of multi-factor authentication?,A) To use multiple antivirus programs,B) To authenticate users using various devices,C) To authenticate users using multiple factors like passwords and biometrics,D) To encrypt data in multiple layers,Answer: C
+Q. What is the primary goal of ransomware?,A) To protect data,B) To encrypt data and demand payment for its release,C) To conduct ethical hacking,D) To increase network speed,Answer: B
+"Q. What is the principle behind the ""principle of least privilege""?",A) Users should have minimal access needed to perform their tasks,B) Users should have maximum access to all systems,C) Users should not have any access,D) Users should have full administrative access,Answer: A
+"Q. What does ""IoT"" stand for in the context of cybersecurity?",A) Internet of Technology,B) Internet of Telecommunications,C) Internet of Things,D) Internet over Tools,Answer: C
+Q. What is the purpose of a security token in authentication?,A) To encrypt data,B) To authenticate users through a physical device,C) To monitor network traffic,D) To detect malware,Answer: B
+Q. What is the role of a security policy in an organization?,A) To create security vulnerabilities,B) To communicate security guidelines and expectations to employees,C) To ignore security threats,D) To increase network speed,Answer: B
+"Q. What is the purpose of a ""sandbox"" in cybersecurity?",A) To isolate untrusted code or programs,B) To store sensitive information,C) To increase vulnerability to attacks,D) To decrypt encrypted data,Answer: A
+"Q. What is a ""zero-day exploit""?",A) An attack that happens at midnight,B) A vulnerability that is known for a long time,C) An attack that occurs on the same day a vulnerability is discovered,D) An attack with zero chance of success,Answer: C
+"Q. What is the primary aim of a ""brute force attack""?",A) To exploit security weaknesses,B) To crack passwords by trying all possible combinations,C) To launch a DDoS attack,D) To hack into a network using social engineering,Answer: B
+Q. What is the purpose of a VPN (Virtual Private Network)?,"A) To create a secure, encrypted connection over the internet",B) To broadcast network traffic openly,C) To increase vulnerability to attacks,D) To replace firewalls,Answer: A
+Q. What is the significance of regular software updates in cybersecurity?,A) To introduce new vulnerabilities,B) To reduce network speed,C) To patch security vulnerabilities and improve overall security,D) To increase the risk of cyber attacks,Answer: C
+Q. What is the main focus of cybersecurity?,A) Protecting physical devices,B) Protecting data during transmission and storage,C) Increasing vulnerability to cyber attacks,D) Improving network speed,Answer: B
+"Q. What does the term ""pharming"" refer to?",A) A type of phishing attack,B) Modifying network traffic,C) Redirecting website traffic to a fake site,D) Intercepting and modifying data packets,Answer: C
+"Q. What is the purpose of a ""honeypot"" in cybersecurity?",A) To store sensitive information,"B) To lure attackers and detect, deflect, or study hacking attempts",C) To block all incoming network traffic,D) To slow down network performance,Answer: B
+Q. Which type of malware is designed to spread from one computer to another without user intervention?,A) Trojan horse,B) Worm,C) Ransomware,D) Spyware,Answer: B
+"Q. What is the role of a ""penetration tester"" in cybersecurity?",A) To develop malware,B) To identify and exploit vulnerabilities,C) To patch security holes,D) To encrypt data,Answer: B
+Q. What is the primary function of a security audit?,A) To increase vulnerability to attacks,B) To identify and address security weaknesses in a system,C) To authenticate users,D) To hack into computer networks,Answer: B

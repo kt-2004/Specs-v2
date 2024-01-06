@@ -1,0 +1,31 @@
+Question,optionA,optionB,optionC,optionD,Answer
+Q. What is the primary function of the CPU in a computer system?,A) Storage,B) Processing,C) Input,D) Output,Answer: B
+Q. Which component of the CPU stores frequently accessed data for quick retrieval?,A) ALU (Arithmetic Logic Unit),B) Cache memory,C) RAM (Random Access Memory),D) Hard disk,Answer: B
+"Q. What does the term ""ALU"" stand for in the context of computer architecture?",A) Arithmetic and Logic Unit,B) Accumulator and Logic Unit,C) Arithmetic and Language Unit,D) Algorithmic and Logical Unit,Answer: A
+Q. Which of the following is a volatile memory type?,A) ROM (Read-Only Memory),B) RAM (Random Access Memory),C) Cache memory,D) Hard disk,Answer: B
+Q. What is the purpose of the control unit in a CPU?,A) Performs arithmetic operations,B) Manages the flow of data within the CPU,C) Stores data permanently,D) Interacts with peripheral devices,Answer: B
+Q. Which type of memory retains its content even when the power is turned off?,A) RAM (Random Access Memory),B) Cache memory,C) ROM (Read-Only Memory),D) Hard disk,Answer: C
+Q. What is the clock speed of a CPU measured in?,A) Megabytes,B) Hertz,C) Gigahertz,D) Kilobytes,Answer: C
+"Q. What does the term ""GPU"" stand for in computer architecture?",A) General Processing Unit,B) Graphics Processing Unit,C) General Purpose Unit,D) General Peripheral Unit,Answer: B
+Q. Which system bus connects the CPU to the main memory in a computer system?,A) Address bus,B) Data bus,C) Control bus,D) Peripheral bus,Answer: B
+Q. What is the purpose of the BIOS (Basic Input/Output System) in a computer?,A) Manages input devices,B) Controls the display output,C) Boots up the computer and initializes hardware,D) Executes application programs,Answer: C
+"Q. In the context of computer architecture, what is pipelining?",A) A technique for organizing data in memory,B) A process of fetching instructions from storage,C) The simultaneous execution of multiple instructions,D) The communication link between CPU and I/O devices,Answer: C
+Q. Which register in the CPU is used to store the address of the next instruction to be executed?,A) Program Counter (PC),B) Memory Address Register (MAR),C) Accumulator (ACC),D) Instruction Register (IR),Answer: A
+Q. What is the purpose of the Memory Management Unit (MMU) in a computer system?,A) Manages input devices,B) Manages memory hierarchy,C) Controls the display output,D) Coordinates peripheral devices,Answer: B
+Q. What is the role of the I/O Controller in computer architecture?,A) Performs arithmetic operations,B) Manages input and output operations,C) Stores data permanently,D) Executes program instructions,Answer: B
+Q. Which memory hierarchy component is the fastest but also the smallest in size?,A) RAM (Random Access Memory),B) Hard disk,C) Cache memory,D) Optical disk,Answer: C
+Q. What is the purpose of the system clock in a computer system?,A) Manages memory access,B) Synchronizes operations within the CPU,C) Controls input devices,D) Executes program instructions,Answer: B
+Q. What is the role of the Arithmetic Logic Unit (ALU) in the CPU?,A) Manages memory access,B) Performs arithmetic and logical operations,C) Controls input devices,D) Coordinates peripheral devices,Answer: B
+Q. What is the function of the Data Bus in a computer system?,A) Transfers addresses between CPU and memory,B) Carries data between CPU and memory,C) Controls input and output operations,D) Coordinates peripheral devices,Answer: B
+Q. Which storage type is commonly used for long-term data storage in computers?,A) RAM (Random Access Memory),B) Cache memory,C) Hard disk,D) Virtual memory,Answer: C
+"Q. What does the term ""RAID"" stand for in the context of computer storage?",A) Redundant Array of Independent Disks,B) Random Access and Integrated Drive,C) Read-After-Input Delay,D) Rapid Access to Input Data,Answer: A
+Q. Which addressing mode in computer architecture uses a fixed address?,A) Immediate addressing,B) Direct addressing,C) Indirect addressing,D) Register addressing,Answer: A
+Q. What is the purpose of the Interrupt Controller in a computer system?,A) Executes program instructions,B) Manages input devices,C) Coordinates peripheral devices,D) Handles external events requiring attention,Answer: D
+"Q. In the context of computer architecture, what is a register?",A) A type of storage device,B) A high-speed storage location within the CPU,C) A peripheral device,D) An input device,Answer: B
+Q. What is the role of the Program Counter (PC) in a computer's CPU?,A) Stores the current instruction being executed,B) Manages memory access,C) Controls input devices,D) Holds the address of the next instruction to be executed,Answer: D
+Q. Which type of memory is non-volatile and often used for long-term storage of data?,A) RAM (Random Access Memory),B) Cache memory,C) Hard disk,D) Optical disk,Answer: D
+Q. What is the purpose of the Fetch-Decode-Execute cycle in a CPU?,A) Manages input devices,B) Executes program instructions,C) Controls the display output,D) Coordinates peripheral devices,Answer: B
+Q. What is the role of the Clock Generator in a computer system?,A) Manages memory access,B) Synchronizes operations within the CPU,C) Controls input devices,D) Executes program instructions,Answer: B
+Q. What is the purpose of the Address Bus in a computer system?,A) Transfers addresses between CPU and memory,B) Carries data between CPU and memory,C) Controls input and output operations,D) Coordinates peripheral devices,Answer: A
+"Q. In computer architecture, what is the purpose of a coprocessor?",A) Manages memory access,B) Performs additional specialized functions,C) Controls input devices,D) Coordinates peripheral devices,Answer: B
+Q. Which storage technology uses magnetic fields to store data?,A) SSD (Solid State Drive),B) Optical disk,C) Magnetic disk,D) Flash drive,Answer: C

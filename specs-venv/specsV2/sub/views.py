@@ -247,7 +247,7 @@ def mcq(request):
     return render(request, 'mcq.html', {'questions':questions})
 
 def add_to_db(request):
-    with open('sub/static/Sanskrit.csv', mode ='r',encoding="utf8") as file:
+    with open('sub/static/Geometry.csv', mode ='r',encoding="utf8") as file:
         csvFile = list(csv.reader(file))
         for lines in csvFile:
             if lines != []: 
@@ -260,7 +260,7 @@ def add_to_db(request):
                         optionB=lines[2],
                         optionC=lines[3],
                         optionD=lines[4],
-                        subject="Sanskrit"
+                        subject="Geometry"
                     )
                 except:
                     continue
