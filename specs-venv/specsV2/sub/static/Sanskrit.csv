@@ -1,10 +1,30 @@
 Question,optionA,optionB,optionC,optionD,Answer
-"Q. Identify the correct meaning of the Sanskrit word ""योगः"" (Yogah):",A) Path,B) Union,C) Discipline,D) Devotion,Answer: B
-"Q. Choose the correct translation of ""विद्यायां रताः"" (Vidyayam ratah):",A) Engaged in knowledge.,B) Devoted to duty.,C) Blissful in meditation.,D) Detached from the world.,Answer: A
-"Q. In Sanskrit, what does the term ""संस्कृत"" (Sanskrit) mean?",A) Ancient,B) Perfected,C) Sacred,D) Purified,Answer: B
-Q. What is the Sanskrit name for the concept of duty or righteous action?,A) Karma,B) Dharma,C) Yoga,D) Moksha,Answer: B
-"Q. Translate the Sanskrit phrase ""आत्मनं विद्धि"" (Atmanam viddhi):",A) Know thyself.,B) Love conquers all.,C) Peace within.,D) Surrender to God.,Answer: A
-"Q. What does the term ""संसार"" (Samsara) refer to in Sanskrit philosophy?",A) Liberation,B) Enlightenment,C) Worldly existence,D) Divine knowledge,Answer: C
-"Q. Identify the correct meaning of ""उद्दीपन"" (Uddipana):",A) Enlightenment,B) Offering,C) Meditation,D) Illumination,Answer: D
-"Q. Who is considered the author of the ancient Sanskrit treatise on statecraft, ""Arthashastra""?",A) Kalidasa,B) Chanakya,C) Bhasa,D) Patanjali,Answer: B
-"Q. Translate the phrase ""सत्यस्य सत्यं ब्रूयात्"" (Satyasya satyam bruuyaat):",A) Speak the truth.,B) Seek the truth.,C) Truth conquers all.,D) Uphold truth.,Answer: A
+Q. किं भारतस्य राष्ट्रनामनि स्तिथम्?,A) दिल्ली,B) नयी दिल्ली,C) भारतम्,D) मुंबई,Answer: C
+Q. सर्वप्रथम कुत्र वेदाः प्राप्ताः आसन्ति?,A) गंगा देशे,B) हिमालये,C) यमुना तटे,D) काश्मीरे,Answer: B
+Q. कस्मिन वर्गे भारतीय भूगोलस्य देशाः आसन्ति?,A) द्वीपवर्गे,B) उच्चभूमिवर्गे,C) दक्षिणभूमिवर्गे,D) मध्यभूमिवर्गे,Answer: A
+Q. सूर्यस्य अदित्यस्य च वन्दनीयस्य नाम किम्?,A) उषा,B) सरस्वती,C) आदित्या,D) गौरी,Answer: C
+Q. को भगवद्गीतायाः रचयिता आसीत्?,A) व्यासः,B) वाल्मीकिः,C) कालिदासः,D) भासः,Answer: A
+Q. संस्कृते कस्मिन विभक्तिः नास्ति?,A) प्रथमाविभक्तिः,B) द्वितीयाविभक्तिः,C) तृतीयाविभक्तिः,D) सप्तमाविभक्तिः,Answer: B
+Q. कुत्र गंगा नदी समास्तिति?,A) हिमालये,B) विन्ध्ये,C) यमुनायाम्,D) दक्षिणे,Answer: A
+Q. वहन्ति इति संस्कृते कस्मिन लकारे आस्ति?,A) लट् लकारः,B) लोट् लकारः,C) लङ् लकारः,D) विद्यत् लकारः,Answer: C
+"Q. संस्कृते ""पुस्तकम्"" इति शब्दस्य विकरणशब्दं किम्?",A) पुस्तका,B) पुस्तके,C) पुस्तकायाम्,D) पुस्तकायाः,Answer: A
+Q. कः कवयित्री भारतीयस्सन्ति?,A) सुभाषितकारः,B) संकीर्तकारः,C) काव्यकारः,D) भाषणकारः,Answer: C
+Q. अन्नस्य मूलं किम्?,A) वन्याः,B) तृणानि,C) वृक्षाः,D) पुष्पाणि,Answer: B
+"Q. संस्कृते ""बालकः गच्छति"" इति वाक्यस्य प्रथमपुरुषे एकवचने रूपम् किम्?",A) गच्छति,B) गच्छताम्,C) गच्छताः,D) गच्छन्ति,Answer: A
+Q. सूर्यकिरणानाम् अद्भुतं रूपम् अस्ति इति किम्?,A) ग्रन्थः,B) गीता,C) सूर्यशतकम्,D) व्याकरणम्,Answer: C
+Q. कस्मिन युगे महाभारतः रचितः आसीत्?,A) कृतयुगे,B) त्रेतायुगे,C) द्वापरयुगे,D) कलियुगे,Answer: C
+"Q. संस्कृते ""गङ्गा"" इति शब्दस्य पुल्लिङ्गम् अस्ति इति किम्?",A) हो,B) अहो,C) कुत्र,D) अत्र,Answer: A
+Q. कस्मिन शत्रौ स्वराज्ये राजा नः पाण्डवः आसीत्?,A) धृतराष्ट्रे,B) दुर्योधने,C) शकुन्तले,D) कर्णे,Answer: B
+Q. कथं विद्या अस्ति इति किम्?,A) पुस्तकेन,B) गुरुणा,C) स्वन्तं,D) अहम्,Answer: C
+Q. कस्मिन विभक्तौ योजकाः सन्ति इति किम्?,A) प्रथमाविभक्तौ,B) द्वितीयाविभक्तौ,C) तृतीयाविभक्तौ,D) सप्तमाविभक्तौ,Answer: B
+"Q. संस्कृते ""मुखम्"" इति शब्दस्य त्रिषु विभक्तिषु एकवचने रूपम् किम्?",A) मुखम्,B) मुखे,C) मुखायाः,D) मुखस्य,Answer: A
+Q. भारते कतिः राज्यानि असन्ति इति किम्?,A) 26,B) 28,C) 30,D) 32,Answer: C
+"Q. संस्कृते ""सर्वनामानि"" इति शब्दस्य अन्त्यपदे एकवचने रूपम् किम्?",A) सर्वनाम,B) सर्वनामानि,C) सर्वनाम्नाम्,D) सर्वनाम्नः,Answer: B
+"Q. संस्कृते ""क्रीडाङ्गणम्"" इति शब्दस्य सर्वनामान्त्ये रूपम् किम्?",A) क्रीडाङ्गणे,B) क्रीडाङ्गणायाः,C) क्रीडाङ्गणायै,D) क्रीडाङ्गणायाम्,Answer: A
+Q. भारते कतिः केन्द्रशास्त्रीय क्षेत्राणि असन्ति इति किम्?,A) 10,B) 12,C) 14,D) 16,Answer: B
+Q. विद्यालये किं पठति इति किम्?,A) शिक्षकः,B) छात्रः,C) विद्यार्थिनी,D) शिक्षिका,Answer: B
+"Q. संस्कृते ""पुनः"" इति शब्दस्य विप्रतीपदिकं किम्?",A) न,B) तथा,C) इह,D) यत्र,Answer: A
+"Q. संस्कृते ""तातः"" इति शब्दस्य विप्रतीपदिकं किम्?",A) पतिः,B) सोऽहम्,C) मातुः,D) पुत्रः,Answer: D
+Q. भारतीये ज्योतिषशास्त्रे कतिः ग्रहाः सन्ति इति किम्?,A) 7,B) 9,C) 12,D) 14,Answer: C
+"Q. संस्कृते ""वृक्षः"" इति शब्दस्य सर्वनामन्त्ये रूपम् किम्?",A) वृक्षे,B) वृक्षाय,C) वृक्षात्,D) वृक्षस्य,Answer: D
+"Q. संस्कृते ""सप्तदश"" इति शब्दस्य अर्थः किम्?",A) 10,B) 15,C) 17,D) 20,Answer: C

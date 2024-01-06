@@ -1,3 +1,4 @@
+from collections import defaultdict
 from datetime import datetime
 from django.shortcuts import render
 from django.http import HttpResponse
@@ -9,6 +10,8 @@ from django.core.mail import EmailMessage
 import random
 import csv
 from django.db import connection
+from django.views.decorators.cache import never_cache
+
 
 
 # Create your views here.
@@ -86,7 +89,9 @@ def myprof(request):
         try:
             prof=User.objects.get(uName=request.session['username'])
             print(prof.uName)
-            response = render(request,"myprof.html",{'uName':prof.uName,'uEmail':prof.uEmail,'uPhone':prof.uPhone})
+            student = Student.objects.get(email=request.session["email"])
+            result = eval(str(student.result))
+            response = render(request,"myprof.html",{'uName':prof.uName,'uEmail':prof.uEmail,'uPhone':prof.uPhone,"score":student.score,"subjects":result})
             return response  
         except Exception as e:
             print(e)
@@ -97,6 +102,7 @@ def logout(request):
     response.set_cookie('username', None)
     response.set_cookie("isLoggedIn", False)
     request.session['username'] = None
+    request.session['email'] = None
     return response
 def register(request):
     response = redirect("home")
@@ -141,44 +147,84 @@ def SendEmail(email,request):
     return otp
 def fillform(request):
     if not get_referer(request):
+        print("user not logged in")
         return HttpResponse("<h1>Please Login first.</h1>")
+    with connection.cursor() as cursor:
+        cursor.execute(f"SELECT * FROM sub_student WHERE email='{request.session['email']}'")
+        print(cursor.fetchall())
+        for i in cursor.fetchall():
+            if i[-1] != -1:
+                return HttpResponse("Can't give exam twice")
     isLoggedIn = request.COOKIES.get('isLoggedIn','False')
     if isLoggedIn=='True':
         if request.method == 'POST':
-            Student.objects.create(
-                first_name = request.POST["first_name"],
-                last_name = request.POST["last_name"],
-                date_of_birth = datetime.strptime(request.POST["date_of_birth"], '%Y-%m-%d').date(),
-                email = request.POST["email"],
-                seat_no = request.POST["seat_no"],
-                stream = request.POST["stream"],
-                subject1 = request.POST.getlist("subject[]")[0],
-                subject2 = request.POST.getlist("subject[]")[1],
-                subject3 = request.POST.getlist("subject[]")[2],
-                marks1 = int(request.POST["marks1"]),
-                marks2 = int(request.POST["marks2"]),
-                marks3 = int(request.POST["marks3"]),
-                skills = ((str(request.POST.getlist("skills[]")).replace("[","")).replace("]","")).replace("\'",""),
-                interested_subjects = ((str(request.POST.getlist("interested_subjects[]"))).replace('[', '')).replace(']', '').replace("\'","")
-            )
-            request.session["email"] = request.POST["email"]
-            return redirect("/mcq")
+            try:
+                Student.objects.get(email=request.POST["email"])
+                return HttpResponse("Email already exists")
+            except:
+                Student.objects.create(
+                    first_name = request.POST["first_name"],
+                    last_name = request.POST["last_name"],
+                    date_of_birth = datetime.strptime(request.POST["date_of_birth"], '%Y-%m-%d').date(),
+                    email = request.POST["email"],
+                    seat_no = request.POST["seat_no"],
+                    stream = request.POST["stream"],
+                    subject1 = request.POST.getlist("subject[]")[0],
+                    subject2 = request.POST.getlist("subject[]")[1],
+                    subject3 = request.POST.getlist("subject[]")[2],
+                    marks1 = int(request.POST["marks1"]),
+                    marks2 = int(request.POST["marks2"]),
+                    marks3 = int(request.POST["marks3"]),
+                    skills = ((str(request.POST.getlist("skills[]")).replace("[","")).replace("]","")).replace("\'",""),
+                    interested_subjects = ((str(request.POST.getlist("interested_subjects[]"))).replace('[', '')).replace(']', '').replace("\'",""),
+                    score=-1
+                )
+                request.session["email"] = request.POST["email"]
+                return redirect("/mcq")
         else:
             print("No form found")
     else:
         return HttpResponse("<h1>Please Login first.</h1>")
     return render(request,"fillform.html")
+
+@never_cache
 def mcq(request):
+    if not get_referer(request):
+        return HttpResponse("<h1>Please Login first.</h1>")
+    with connection.cursor() as cursor:
+        cursor.execute(f"SELECT * FROM sub_student WHERE email='{request.session['email']}'")
+        for i in cursor.fetchall():
+            print(i[-1])
+            if i[-1] > -1:
+                return HttpResponse("Can't give exam twice")
     if request.method == "POST":
         score=0
+        subjects = {}
+        corrects = {}
+        subjects = defaultdict(lambda: 0, subjects)
+        corrects = defaultdict(lambda: 0, corrects)
         for i in request.POST.items():
             if "answer_" in i[0]:
                 question_id = i[0].replace("answer_","")
                 if MCQ.objects.get(id=question_id).correct == i[1].split(")")[0]:
                     score+=1
+                    subjects[MCQ.objects.get(id=question_id).subject]+=1
+                    corrects[MCQ.objects.get(id=question_id).subject]+=1
+                else:
+                    subjects[MCQ.objects.get(id=question_id).subject]+=1
+
+        print(dict(subjects))
+        print(dict(corrects))
         request.session["score"]=score
-        # return redirect("/results")
-        return HttpResponse(f"Your score is {score}")
+        for i in subjects.keys():
+            subjects[i] = str(corrects[i]) + "/" + str(subjects[i])
+        request.session["subjects"]=subjects
+        print(str(subjects))
+        t = Student.objects.get(email=request.session["email"])
+        t.result = str(dict(subjects))
+        t.score = score
+        t.save()
+        return redirect("/myprof")
     temp = []
     stud = Student.objects.get(email=request.session["email"])
     with connection.cursor() as cursor:
@@ -199,8 +245,9 @@ def mcq(request):
         formatted_temp.append([i[1],i[2],i[3],i[4],i[5],i[0]])
     questions = random.sample(formatted_temp,15)
     return render(request, 'mcq.html', {'questions':questions})
+
 def add_to_db(request):
-    with open('sub/static/Algebra.csv', mode ='r',encoding="utf8") as file:
+    with open('sub/static/Sanskrit.csv', mode ='r',encoding="utf8") as file:
         csvFile = list(csv.reader(file))
         for lines in csvFile:
             if lines != []: 
@@ -213,7 +260,7 @@ def add_to_db(request):
                         optionB=lines[2],
                         optionC=lines[3],
                         optionD=lines[4],
-                        subject="Algebra"
+                        subject="Sanskrit"
                     )
                 except:
                     continue

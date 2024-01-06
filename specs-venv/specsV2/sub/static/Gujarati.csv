@@ -1,10 +1,28 @@
 Question,optionA,optionB,optionC,optionD,Answer
-"Q. Identify the correct meaning of the Sanskrit word ""विद्या"" (Vidya):",A) Knowledge,B) Wisdom,C) Power,D) Happiness,Answer: A
-"Q. Choose the correct translation of ""अहम् गच्छामि"" (Aham gachchhami):",A) I am reading.,B) I am going.,C) I am eating.,D) I am writing.,Answer: B
-"Q. In Sanskrit, what does the term ""उपनिषद्"" (Upanishad) refer to?",A) Rituals,B) Philosophical texts,C) Poetry,D) Grammar,Answer: B
-Q. What is the Sanskrit name for the Hindu god of creation?,A) Shiva,B) Vishnu,C) Brahma,D) Indra,Answer: C
-"Q. Translate the Sanskrit phrase ""योगः कर्मसु कौशलम्"" (Yogah karmasu kaushalam):",A) Yoga is skill in action.,B) Karma is the path to salvation.,C) Skillful action is yoga.,D) Yoga leads to detachment.,Answer: C
-"Q. What is the meaning of the Sanskrit word ""धर्म"" (Dharma)?",A) Religion,B) Duty/righteousness,C) Meditation,D) Liberation,Answer: B
-"Q. Identify the correct meaning of ""सत्यमेव जयते"" (Satyameva Jayate):",A) Truth alone triumphs.,B) Unity in diversity.,C) In God we trust.,D) Strength through discipline.,Answer: A
-"Q. Who is the author of the Sanskrit epic ""रामायण"" (Ramayana)?",A) Vedavyasa,B) Kalidasa,C) Valmiki,D) Panini,Answer: C
-"Q. Translate the phrase ""अहिंसा परमो धर्मः"" (Ahimsa Paramo Dharma):",A) Non-violence is the highest virtue.,B) Practice makes perfect.,C) Knowledge is power.,D) Unity is strength.,Answer: A
+Q. ભારતનું રાજધાની શું છે?,A) દિલ્હી,B) મુંબઇ,C) કોલકાતા,D) ચેન્નઈ,Answer: A
+Q. ગુજરાતી ભાષાનું વ્યાકરણ કેટલા પ્રકારનું હોય છે?,A) 5,B) 7,C) 8,D) 6,Answer: B
+Q. ગુજરાતી સાહિત્યનો પ્રારંભ ક્યારે થયો હતો?,A) 10મી સદીના પહેલાં,B) 14મી સદીમાં,C) 12મી સદીમાં,D) 18મી સદીના બીજાનાં અર્ધમાં,Answer: C
+Q. ગુજરાતી ભાષાનું નિર્દેશક અક્ષર શું છે?,A) ત,B) ધ,C) ર,D) હ,Answer: B
+"Q. ગુજરાતી ભાષાના લેખક ""પરિણામ"" પુસ્તક કોણ છે?",A) પન્નાલાલ પટેલ,B) ગુણવંત શાહ,C) હરીશચંદ્ર,D) ચંદ્રકાંત બક્શી,Answer: C
+Q. પ્રજાતંત્ર અને આંતરરાષ્ટ્રીય ક્ષેત્રે સ્થાનિક સાહિત્યિક સાહિત્ય કોણને કહેવાય છે?,A) કવિજનો,B) પદ્યકારો,C) લેખકો,D) વિવેચકો,Answer: B
+"Q. ""લક્ષણીય કવિતા"" કોણ લખ્યું છે?",A) ગુણવંત શાહ,B) નરસિંહ રાવજી,C) કનૈયાલાલ મુનશી,D) ચંદ્રકાંત બક્શી,Answer: B
+Q. ગુજરાતનું લોકનૃત્ય શું છે?,A) ગરબા,B) ભવાઇ,C) હૂડા,D) દંગ,Answer: C
+"Q. ગુજરાતી ભાષાનું વ્યાકરણ વિષયમાં ""સમાસ"" કેટલા પ્રકારનું હોય છે?",A) 2,B) 3,C) 4,D) 5,Answer: A
+"Q. ગુજરાતી સાહિત્યના ""કાવ્યસાગર"" તરીકે પરિચિત કોણને કહેવાય છે?",A) નરસિંહ રાવજી,B) કનૈયાલાલ મુનશી,C) ગુણવંત શાહ,D) ચંદ્રકાંત બક્શી,Answer: A
+Q. ગુજરાતમાં કઈ રાત્રિ ઉત્સવ પરવાનગીતા નથી?,A) નવરાત્રિ,B) શિવરાત્રિ,C) હોળી,D) રામાણવમી,Answer: B
+"Q. ગુજરાતી સાહિત્યમાં ""ઉપમેય"" અર્થાત ઉપમાનના ઉપયોગનું વિમોચન કોણ કરતાં?",A) ભારતીય ભાષાએતિહાસ,B) નાટ્યસાહિત્યશાસ્ત્ર,C) કાવ્યશાસ્ત્ર,D) વ્યાકરણ,Answer: A
+Q. ગુજરાતમાં કયું વર્ણસંકરણ છે?,A) મણિપુરવર્ણ,B) સ્વરમય વર્ણ,C) સંયુક્ત વર્ણ,D) સરળ વર્ણ,Answer: C
+"Q. ""ગુજરાત માતા"" કવિતા કોણ લખ્યો છે?",A) નરસિંહ મહેતા,B) ગુલાબદાસ કાની,C) વર્જીલાલ સપુત,D) કસ્તુરબા,Answer: C
+Q. ગુજરાતમાં કયો બનાવટો ખાવામાં આવે છે?,A) ઢોકળા,B) હાંડ્વો,C) ધોકરો,D) થેપલા,Answer: D
+"Q. ""શરચ્ચંદ્ર ચટર્જી"" કઈ કવિતાઓના રચયિતા છે?",A) નરનારાયણ દવે,B) ગુલાબદાસ કાની,C) દિલીપરાયણ,D) મઘુ,Answer: A
+"Q. ""શરચ્ચંદ્ર મુક્તાની"" કોણની રચના છે?",A) નારાયણ દવે,B) ગુલાબદાસ કાની,C) દિલીપરાયણ,D) મઘુ,Answer: D
+"Q. ""સોનાલી છાંદી"" કવિતા કોણ લખ્યો છે?",A) સારોજિની નાયક,B) ગુલાબદાસ કાની,C) દિલીપરાયણ,D) પનસરાય નાયક,Answer: B
+"Q. કયા ગુજરાતી સાહિત્યિકે ""સર્જનહાર શેખડીયા"" તરીકે કહેવામાં આવ્યું છે?",A) ગુણવંત શાહ,B) મેઘાણી પાણ્ડ્યા,C) ચંદ્રકાંત બક્શી,D) કવિન્દ્ર પોટાની,Answer: D
+"Q. ""પંચાયતી રાજ"" વાર્તાકાર કેટલાં વર્ષ સુધી ચાલી રહ્યા?",A) 1942,B) 1945,C) 1947,D) 1950,Answer: A
+Q. ગુજરાતી રાજ્યના સૌપ્રથમ રાજયપાલ કોણ હતા?,A) હીરાલાલ પાટેલ,B) નવલખાની નાયક,C) મહેંદ્ર મીશ્ર,D) જીવરાજ મહેતા,Answer: C
+Q. ગુજરાતી બાલસાહિત્યના પિતા કોણ છે?,A) માણીલાલ દેવશંકર,B) ભગવાનજી પંડ્યા,C) ચંદ્રકાંત બક્શી,D) રવિન્દ્રનાથ ઠાક્કર,Answer: A
+Q. ગુજરાતી ભક્તિસાહિત્યના સર્વોત્તમ રચયિતા કોણ છે?,A) દયારામ મજમુદાર,B) મેહુલ રાઘવ,C) નરસિંહ મહેતા,D) પંનાલાલ પટેલ,Answer: A
+Q. ગુજરાતી ગાયક કઈ છે?,A) હેમુ ગઢવી,B) અનુરાધા પૌડવાલ,C) આતુલ પાડક,D) મુકેશ,Answer: B
+Q. ગુજરાતી વાર્તાકાર કોણ છે?,A) ગુલાબદાસ કાની,B) ધ્રુવ ભટ્ટ,C) કેતન પટેલ,D) રવિન્દ્રનાથ ઠાક્કર,Answer: C
+Q. ગુજરાતમાં કોઈ પ્રસિદ્ધ શાસક નથી?,A) સરદાર વલ્લભભાઇ પટેલ,B) ગુલાબદાસ પટેલ,C) મધુસૂદન મિસ્ત્રી,D) બાબુભાઇ પટેલ,Answer: C
+"Q. ""અંતરાષ્ટ્રીય કવિ"" કઈ કવિતા છે?",A) ગુલજાર,B) સારોજિની નાયક,C) પંનાલાલ પટેલ,D) રવિન્દ્રનાથ ઠાક્કર,Answer: D

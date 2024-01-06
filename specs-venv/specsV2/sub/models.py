@@ -82,6 +82,9 @@ class Student(models.Model):
 
     interested_subjects = models.TextField(max_length=250)
 
+    result = models.TextField(max_length=250)
+    score = models.IntegerField(default=-1)
+
     def get_skills_list(self):
         return [skill.strip() for skill in self.skills.split(',') if skill.strip()]
 

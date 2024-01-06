@@ -1,29 +1,30 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <title>Display Multiple Choice Questions</title>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
     </script>
-  </head>
-  <body>
+</head>
+
+<body>
     <h1>Multiple Choice Questions</h1>
     <form action="#" method="post">
-      {% csrf_token %}
-      {% for question in questions %}
+        {% csrf_token %} {% for question in questions %}
         <h2>{{ question.0 }}</h2>
         <label>Options:</label>
         <br />
-        <input type="radio" name="answer_{{question.5}}" value="{{question.1}}" id="option_{{question.1}}_{{question.5}}" />
+        <input required type="radio" name="answer_{{question.5}}" value="{{question.1}}" id="option_{{question.1}}_{{question.5}}" />
         <label for="option_{{question.1}}_{{question.5}}">{{ question.1}}</label><br />
-        <input type="radio" name="answer_{{question.5}}" value="{{question.2}}" id="option_{{question.2}}_{{question.5}}" />
+        <input required type="radio" name="answer_{{question.5}}" value="{{question.2}}" id="option_{{question.2}}_{{question.5}}" />
         <label for="option_{{question.2}}_{{question.5}}">{{ question.2}}</label><br />
-        <input type="radio" name="answer_{{question.5}}" value="{{question.3}}" id="option_{{question.3}}_{{question.5}}" />
+        <input required type="radio" name="answer_{{question.5}}" value="{{question.3}}" id="option_{{question.3}}_{{question.5}}" />
         <label for="option_{{question.3}}_{{question.5}}">{{ question.3 }}</label><br />
-        <input type="radio" name="answer_{{question.5 }}" value="{{question.4}}" id="option_{{question.4}}_{{question.5}}" />
+        <input required type="radio" name="answer_{{question.5 }}" value="{{question.4}}" id="option_{{question.4}}_{{question.5}}" />
         <label for="option_{{question.4}}_{{question.5}}">{{ question.4 }}</label><br />
-        <br />
-      {% endfor %}
-      <button type="submit">Submit Answer</button>
+        <br /> {% endfor %}
+        <button type="submit">Submit Answer</button>
     </form>
-  </body>
+</body>
+
 </html>
