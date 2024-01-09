@@ -12,10 +12,6 @@ import csv
 from django.db import connection
 from django.views.decorators.cache import never_cache
 
-
-
-# Create your views here.
-
 def get_referer(request):
     referer = request.META.get('HTTP_REFERER')
     if not referer:
@@ -36,9 +32,9 @@ def contact(request):
     return render(request,"contact.html")
 @csrf_exempt
 def forgotpass(request):
-    changepass=redirect("/forgotpass?otp")
+    changepass=redirect("/forgotpass?otp")# To get user on otp page.
     if not get_referer(request):
-        return HttpResponse("<h1>Please Login first.</h1>")
+        return redirect("/register")
     if request.method == 'POST':
         if not request.POST['OTP']:
             email=request.POST.get('email')
@@ -47,22 +43,21 @@ def forgotpass(request):
             return changepass
         else:
             otp = request.POST.get("OTP")
-            if otp == request.COOKIES.get("otp"):
+            if otp == request.COOKIES.get("otp"):#Compares otp got from user and stored in the cookie.
                 return redirect("changepass")
             else:
-                return HttpResponse("Incorrect OTP")
+                return HttpResponse("<h1>Incorrect OTP.</h1>") #Msg
     return render(request,"forgotpass.html")
 def changepass(request):
     if not get_referer(request):
-        return HttpResponse("<h1>Please Login first.</h1>")
+        return redirect("/register")
     if request.method=="POST":
-        response=redirect("/?password_changed")
+        response=redirect("/?password_changed")#After changing password gets user to home page.
         uName = request.POST['uName']
-        response.set_cookie('username',uName)
+        response.set_cookie('username',uName)#For getting username also in case of new or updated for name get from the cookie.
         request.session["username"] = uName
         uPass = request.POST['uPass']
-        print(list(User.objects.all().values_list('uName', flat=True)) 
-)
+        print(list(User.objects.all().values_list('uName', flat=True)))#for cmd
         ch=User.objects.get(uName=uName)
         ch.uPass=uPass
         ch.uName=uName 
@@ -70,33 +65,40 @@ def changepass(request):
         return response
     else:
         return render(request,"changepass.html")
+#Myprofile with score of students and also can update username.
 def myprof(request):
     if not get_referer(request):
-        return HttpResponse("<h1>Please Login first.</h1>")
+        return redirect("/register")
     if request.method=="POST":
         uEmail = request.POST['uEmail']
         uName = request.POST['uName']
         uPhone = request.POST['uPhone']
         prof=User.objects.get(uName=request.session['username'])
-        prof.uEmail=uEmail
-        prof.uName=uName
-        prof.uPhone=uPhone
+        prof.uEmail=uEmail       #Stores updated or new email here.
+        prof.uName=uName       #Stores updated or new username here.
+        prof.uPhone=uPhone       #Stores updated or new phone here.
         prof.save()
+        #To get updated things on the same pages again.or after refresh.
         response = render(request,"myprof.html",{'uName':uName,'uEmail':uEmail,'uPhone':uPhone})
-        response.set_cookie('username',prof.uName)
+        response.set_cookie('username',prof.uName) #To get updated user name its stored in the cookie.
         return response
     if request.session.get("username","") != "":
         try:
             prof=User.objects.get(uName=request.session['username'])
             print(prof.uName)
             student = Student.objects.get(email=request.session["email"])
-            result = eval(str(student.result))
+            result = eval(str(student.result)) # eval function is used to represent the score of student .
             response = render(request,"myprof.html",{'uName':prof.uName,'uEmail':prof.uEmail,'uPhone':prof.uPhone,"score":student.score,"subjects":result})
             return response  
         except Exception as e:
-            print(e)
+            print(e) #for cmd
     else:
-        print("No user found in session")
+        response = render(request,"myprof.html",{'uName':uName,'uEmail':uEmail,'uPhone':uPhone})
+        response.set_cookie('username',prof.uName) #To get updated user name its stored in the cookie.
+        print(prof.uName)
+        return response
+        print("No user found in session") #for cmd
+#Logout...
 def logout(request):
     response = render(request,"index.html")
     response.set_cookie('username', None)
@@ -104,10 +106,11 @@ def logout(request):
     request.session['username'] = None
     request.session['email'] = None
     return response
+#Register and Login function are combined here using User model for both.
 def register(request):
     response = redirect("home")
     if request.method=='POST':
-        if request.POST.get('register', False):
+        if request.POST.get('register', False): #For Register...
             uName=request.POST['uName']
             uEmail=request.POST['uEmail']
             uPass=request.POST['uPass']
@@ -120,7 +123,7 @@ def register(request):
             response.set_cookie('isLoggedIn',True)
             print("user saved" + str(formData))
             return response
-        elif request.POST.get('login', False):
+        elif request.POST.get('login', False):  #For Login...
             uEmail=request.POST['uEmail']
             uPass=request.POST['uPass']
             user=User.objects.get(uEmail=uEmail)
@@ -131,36 +134,39 @@ def register(request):
                 print(request.session['username'])
                 return response
     return render(request,"register.html")
+#Feedback...
 def feedback(request):
     if not get_referer(request):
-        return HttpResponse("<h1>Please Login first.</h1>")
+        return redirect("/register")
     if request.method == "POST":
-        print("getting feedback")
+        print("getting feedback")#for cmd
         submitter = User.objects.get(uName=request.session["username"])
         feedback = request.POST['feedback']
         Feedback.objects.create(submitter=submitter, feedback=feedback)
     return render(request,"feedback.html")
+#Email is send to who is give in this def.
 def SendEmail(email,request):
     otp = str(random.randint(1000, 9999))
     email = EmailMessage('OTP', otp ,to=[email])
     email.send()
     return otp
+#Form for students details for forming questions based on thier choices.
 def fillform(request):
     if not get_referer(request):
-        print("user not logged in")
-        return HttpResponse("<h1>Please Login first.</h1>")
+        print("user not logged in") #for cmd
+        return redirect("/register")
     with connection.cursor() as cursor:
         cursor.execute(f"SELECT * FROM sub_student WHERE email='{request.session['email']}'")
         print(cursor.fetchall())
         for i in cursor.fetchall():
             if i[-1] != -1:
-                return HttpResponse("Can't give exam twice")
+                return HttpResponse("<h1>Can't Give Exam Twice.</h1>")
     isLoggedIn = request.COOKIES.get('isLoggedIn','False')
     if isLoggedIn=='True':
         if request.method == 'POST':
             try:
-                Student.objects.get(email=request.POST["email"])
-                return HttpResponse("Email already exists")
+                Student.objects.get(email=request.POST["email"])#For using one email at time.
+                return HttpResponse("Email Already Exists")#Msg
             except:
                 Student.objects.create(
                     first_name = request.POST["first_name"],
@@ -182,21 +188,21 @@ def fillform(request):
                 request.session["email"] = request.POST["email"]
                 return redirect("/mcq")
         else:
-            print("No form found")
+            print("No form found") #for cmd
     else:
-        return HttpResponse("<h1>Please Login first.</h1>")
+        return redirect("/register")
     return render(request,"fillform.html")
-
+#MCQ are filtered here n modified.
 @never_cache
 def mcq(request):
     if not get_referer(request):
-        return HttpResponse("<h1>Please Login first.</h1>")
+        return redirect("/register")
     with connection.cursor() as cursor:
         cursor.execute(f"SELECT * FROM sub_student WHERE email='{request.session['email']}'")
         for i in cursor.fetchall():
             print(i[-1])
             if i[-1] > -1:
-                return HttpResponse("Can't give exam twice")
+                return HttpResponse("<h1>Can't Give Exam Twice.</h1>")
     if request.method == "POST":
         score=0
         subjects = {}
@@ -212,7 +218,6 @@ def mcq(request):
                     corrects[MCQ.objects.get(id=question_id).subject]+=1
                 else:
                     subjects[MCQ.objects.get(id=question_id).subject]+=1
-
         print(dict(subjects))
         print(dict(corrects))
         request.session["score"]=score
@@ -245,7 +250,7 @@ def mcq(request):
         formatted_temp.append([i[1],i[2],i[3],i[4],i[5],i[0]])
     questions = random.sample(formatted_temp,15)
     return render(request, 'mcq.html', {'questions':questions})
-
+#Adding csv files of mcq to database here.Get refered function is not required here.
 def add_to_db(request):
     with open('sub/static/Geometry.csv', mode ='r',encoding="utf8") as file:
         csvFile = list(csv.reader(file))

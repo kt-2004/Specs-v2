@@ -242,7 +242,6 @@
 <body>
     <div class="container">
         <div class="box">
-
             <form action="" id="form" method="POST">
                 {% csrf_token %}
                 <div class="box-login" id="login">
@@ -296,7 +295,7 @@
                             <label for="regEmail">Email address</label>
                         </div>
                         <div class="input-field">
-                            <input type="password" name="uPass" class="input-box input-register" id="regPassword">
+                            <input type="password" name="uPass" class="input-box input-register" id="regPassword" pattern="{.5,}">
                             <label for="regPassword">Password</label>
                             <div class="eye-area">
                                 <div class="eye-box" onclick="myRegPassword()">
@@ -320,15 +319,9 @@
             <div class="switch">
                 <a href="#" class="login active" onclick="login()">Login</a>
                 <a href="#" class="register" onclick="register()">Register</a>
-
                 <div class="btn-active" id="btn"></div>
-
             </div>
-
-
-
         </div>
-
     </div>
     <script>
         var x = document.getElementById('login');
@@ -367,12 +360,7 @@
             document.getElementById("form").setAttribute("action", "?register")
 
         }
-
-
         // View Password codes
-
-
-
         function myLogPassword() {
 
             var a = document.getElementById("logPassword");
@@ -388,7 +376,6 @@
                 b.style.opacity = "1";
                 c.style.opacity = "0";
             }
-
         }
 
         function myRegPassword() {
