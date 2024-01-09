@@ -1,10 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Result</title>
 </head>
+
 <body>
+    <table>
+        <tr>
+            <td>
+                <h2 style="background: transparent; border-radius: 7px; ">{{info}} {{score}}</h2>
+            </td>
+        </tr>
+        <tr style="display: flex;flex-wrap: wrap;">
+            <td>
+                {% for i in subjects.items %}
+                <h3 style="background: transparent; border-radius: 7px; ">{{i.0}} : {{i.1}}</h3>
+                {% endfor %}
+            </td>
+        </tr>
+    </table>
 </body>
+
 </html>

@@ -86,18 +86,19 @@ def myprof(request):
         try:
             prof=User.objects.get(uName=request.session['username'])
             print(prof.uName)
-            student = Student.objects.get(email=request.session["email"])
-            result = eval(str(student.result)) # eval function is used to represent the score of student .
-            response = render(request,"myprof.html",{'uName':prof.uName,'uEmail':prof.uEmail,'uPhone':prof.uPhone,"score":student.score,"subjects":result})
-            return response  
+            try:
+                student = Student.objects.get(email=request.session["email"])
+                result = eval(str(student.result)) # eval function is used to represent the score of student .
+                response = render(request,"myprof.html",{'uName':prof.uName,'uEmail':prof.uEmail,'uPhone':prof.uPhone,"score":student.score,"subjects":result,"info":"Your total score is:"})
+                return response
+            except:
+                response = render(request,"myprof.html",{'uName':prof.uName,'uEmail':prof.uEmail,'uPhone':prof.uPhone})
+                return response
         except Exception as e:
-            print(e) #for cmd
+            print("Exception!!!!!!") #for cmd
+            return HttpResponse("500 Internal server error")
     else:
-        response = render(request,"myprof.html",{'uName':uName,'uEmail':uEmail,'uPhone':uPhone})
-        response.set_cookie('username',prof.uName) #To get updated user name its stored in the cookie.
-        print(prof.uName)
-        return response
-        print("No user found in session") #for cmd
+        return redirect("/register")
 #Logout...
 def logout(request):
     response = render(request,"index.html")
@@ -126,13 +127,18 @@ def register(request):
         elif request.POST.get('login', False):  #For Login...
             uEmail=request.POST['uEmail']
             uPass=request.POST['uPass']
-            user=User.objects.get(uEmail=uEmail)
+            try:
+                user=User.objects.get(uEmail=uEmail)
+            except:
+                return render(request,"register.html",{"error":"Incorrect Email or password"})
             if user.uPass == uPass:
                 response.set_cookie('username', user.uName)
                 response.set_cookie('isLoggedIn',True)
                 request.session['username'] = User.objects.get(uEmail=uEmail).uName
                 print(request.session['username'])
                 return response
+            else:
+                return render(request,"register.html",{"error":"Incorrect Email or password"})
     return render(request,"register.html")
 #Feedback...
 def feedback(request):
@@ -229,7 +235,7 @@ def mcq(request):
         t.result = str(dict(subjects))
         t.score = score
         t.save()
-        return redirect("/myprof")
+        return redirect("/result")
     temp = []
     stud = Student.objects.get(email=request.session["email"])
     with connection.cursor() as cursor:
@@ -250,6 +256,16 @@ def mcq(request):
         formatted_temp.append([i[1],i[2],i[3],i[4],i[5],i[0]])
     questions = random.sample(formatted_temp,15)
     return render(request, 'mcq.html', {'questions':questions})
+
+@never_cache
+def result(request):
+    try:
+        student = Student.objects.get(email=request.session["email"])
+        result = eval(str(student.result)) # eval function is used to represent the score of student.
+        response = render(request,"result.html",{"score":student.score,"subjects":result,"info":"Your total score is:"})
+        return response
+    except:
+        return redirect("/myprof")
 #Adding csv files of mcq to database here.Get refered function is not required here.
 def add_to_db(request):
     with open('sub/static/Geometry.csv', mode ='r',encoding="utf8") as file:

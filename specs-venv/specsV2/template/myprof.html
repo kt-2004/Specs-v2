@@ -19,33 +19,30 @@
     background-color:unset;
     background-blend-mode: color-burn;
     background-image: url('../static/images/prof3.jpg');
-    height:100vh;
     margin-top: 0px;">
     <div class="container">
         <div class="container-fluid">
             <table class="table table-borderless text-light">
-                <form method="POST" action="">
+                <form method="POST" action="" >
                     {% csrf_token %}
-                    <tr>
-                        <th>Username:</th>
-                        <td>
-                            <input type="text" name="uName" value="{{uName}}" style="background: white; border-bottom: 2px solid sienna;border-radius: 7px; margin-right: 250px;" />
+                    <tr  style="display: flex;flex-wrap: wrap;width:fit-content">
+                        <th style="width: 10em;">Username:</th>
+                        <td style="display: flex;flex-wrap: wrap;">
+                            <input type="text" name="uName" value="{{uName}}" style="background: white; border-bottom: 2px solid sienna;border-radius: 7px;"/>
                         </td>
                     </tr>
-                    <tr>
-                        <th>Email:</th>
+                    <tr style="display: flex;flex-wrap: wrap;width:fit-content">
+                        <th style="width: 10em;">Email:</th>
                         <td>
                             <input type="email" name="uEmail" value="{{uEmail}}" style="background: white; border-bottom: 2px solid sienna;border-radius: 7px;" />
                         </td>
                     </tr>
-
-                    <tr>
-                        <th>Phone no:</th>
+                    <tr style="display: flex;flex-wrap: wrap;width:fit-content">
+                        <th style="width: 10em;">Phone no:</th>
                         <td>
-                            <input type="numbers" name="uPhone" value="{{uPhone}}" minlength="10" maxlength="10 " style="background: white; border-bottom: 2px solid sienna;border-radius: 7px; " />
+                            <input type="numbers" name="uPhone" value="{{uPhone}}" minlength="10" maxlength="10 " style="background: white; border-bottom: 2px solid sienna;border-radius: 7px;" />
                         </td>
                     </tr>
-
                     <tr>
                         <td>
                             <a href="{% url 'changepass' %} " style="-webkit-text-fill-color:darkgreen; border-bottom: 2px solid crimson; ">Change Password</a>
@@ -53,10 +50,10 @@
                     </tr>
                     <tr>
                         <td>
-                            <h2 style="background: transparent; border-radius: 7px; ">Your total score is: {{score}}</h2>
+                            <h2 style="background: transparent; border-radius: 7px; ">{{info}} {{score}}</h2>
                         </td>
                     </tr>
-                    <tr>
+                    <tr style="display: flex;flex-wrap: wrap;">
                         <td>
                             {% for i in subjects.items %}
                             <h3 style="background: transparent; border-radius: 7px; ">{{i.0}} : {{i.1}}</h3>
