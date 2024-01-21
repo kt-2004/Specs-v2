@@ -1,5 +1,6 @@
 from collections import defaultdict
 from datetime import datetime
+import os
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.shortcuts import redirect,render
@@ -268,21 +269,28 @@ def result(request):
         return redirect("/myprof")
 #Adding csv files of mcq to database here.Get refered function is not required here.
 def add_to_db(request):
-    with open('sub/static/Geometry.csv', mode ='r',encoding="utf8") as file:
-        csvFile = list(csv.reader(file))
-        for lines in csvFile:
-            if lines != []: 
-                print((lines[5]))
-                try:
-                    MCQ.objects.create(
-                        correct=(lines[5].split(":")[1]).replace(" ",""),
-                        question=lines[0],
-                        optionA=lines[1],
-                        optionB=lines[2],
-                        optionC=lines[3],
-                        optionD=lines[4],
-                        subject="Geometry"
-                    )
-                except:
-                    continue
+    for i in College.objects.all():
+        print(i.name + str(i.get_streams(id=i.id)))
+    return HttpResponse("check console")
+    from os import listdir
+    from os.path import isfile, join
+    onlyfiles = [f for f in listdir(r"D:\Specs v2\specs-venv\specsV2\sub\static") if isfile(join(r"D:\Specs v2\specs-venv\specsV2\sub\static", f))]
+    for i in onlyfiles:
+        with open(f'sub/static/{i}', mode ='r',encoding="utf8") as file:
+            csvFile = list(csv.reader(file))
+            for lines in csvFile:
+                if lines != []: 
+                    print((lines[5]))
+                    try:
+                        MCQ.objects.create(
+                            correct=(lines[5].split(":")[1]).replace(" ",""),
+                            question=lines[0],
+                            optionA=lines[1],
+                            optionB=lines[2],
+                            optionC=lines[3],
+                            optionD=lines[4],
+                            subject=i.replace(".csv","")
+                        )
+                    except:
+                        continue
     return HttpResponse("check console")
