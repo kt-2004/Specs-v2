@@ -12,5 +12,7 @@ admin.site.register(Contact)
 admin.site.register(Email)
 admin.site.register(Student)
 admin.site.register(MCQ)
-admin.site.register(College)
+class CollegeAdmin(admin.ModelAdmin):
+    filter_horizontal = ('courses',)
+admin.site.register(College,CollegeAdmin)
 admin.site.register(Stream)

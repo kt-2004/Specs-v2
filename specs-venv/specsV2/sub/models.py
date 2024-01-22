@@ -116,27 +116,27 @@ class MCQ(models.Model):
 class Stream(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.TextField(default="null",blank=True)
-    fees = models.DecimalField(max_digits=12,decimal_places=4,blank=True,default=-1)
-    desctiption = models.TextField(max_length=255,default="Null")
+    fees = models.CharField(max_length=255,blank=True,default=-1)
+    description = models.TextField(max_length=255,default="Null",blank=True)
     college_name = models.ForeignKey('College', on_delete=models.CASCADE,blank=True)
     def __str__(self):
         return f"{self.name} {self.college_name}"
 
-
 class College(models.Model):
     id = models.AutoField(primary_key=True)
-    streams= None
     name = models.TextField(default="null")
     address = models.TextField(max_length=255,blank=True)
     placement = models.CharField(max_length=255,blank=True)
     hostel = models.CharField(max_length=255,blank=True)
     transport = models.CharField(max_length=255,blank=True)
     link = models.TextField(max_length=255,blank=True)
-    def get_streams(self,id):
+    courses = models.ManyToManyField("Stream",blank=True)
+    def get_streams(self):
         # Return all Stream instances related to this College
-        with connection.cursor() as cursor:
-            cursor.execute(f"SELECT * FROM sub_stream WHERE college_name_id='{id}'")
-            temp = list(cursor.fetchall())
-        return temp
+        # with connection.cursor() as cursor:
+        #     cursor.execute(f"SELECT * FROM sub_stream WHERE college_name_id='{id}'")
+        #     temp = list(cursor.fetchall())
+        # return temp
+        return self.courses.all()
     def __str__(self):
         return f"{self.name}"

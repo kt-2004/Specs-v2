@@ -16,6 +16,7 @@ urlpatterns = [
     path('fillform/',views.fillform,name='fillform'),
     path('mcq/',views.mcq,name='mcq'),
     path('add/',views.add_to_db,name='add'),
+    path('clg/',views.clg_to_db,name='clg'),
     path('result/',views.result,name='result'),
 
 ]    

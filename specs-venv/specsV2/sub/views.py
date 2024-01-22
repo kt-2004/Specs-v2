@@ -268,9 +268,8 @@ def result(request):
     except:
         return redirect("/myprof")
 #Adding csv files of mcq to database here.Get refered function is not required here.
+#For-loop is used to add multiple files at once. 
 def add_to_db(request):
-    for i in College.objects.all():
-        print(i.name + str(i.get_streams(id=i.id)))
     return HttpResponse("check console")
     from os import listdir
     from os.path import isfile, join
@@ -293,4 +292,56 @@ def add_to_db(request):
                         )
                     except:
                         continue
+    return HttpResponse("check console")
+
+def clg_to_db(request):
+    # for i in College.objects.all():
+    #     print(i.placement)
+    #     for j in i.get_streams():
+    #         print("Course Name: " + j.name)
+    #         print("Fees: " + str(j.fees))
+    #         print("Description: " + j.description)
+    #         print("Provider College: " + j.college_name.name)
+    #         print("\n")
+    # return HttpResponse("check console")
+    from os import listdir
+    from os.path import isfile, join
+    onlyfiles = [f for f in listdir(r"D:\Specs v2\specs-venv\specsV2\sub\static\\Courses") if isfile(join(r"D:\Specs v2\specs-venv\specsV2\sub\static\\Courses", f))]
+    n=0
+    for i in onlyfiles:
+        with open(f'sub/static/Courses/{i}', mode ='r',encoding="utf8") as file:
+            csvFile = list(csv.reader(file))
+            for lines in csvFile:
+                if len(lines) != 0:
+                    if lines[0] == "Name":
+                        continue
+                    try:
+                        if College.objects.get(name=lines[0]):
+                            # print("College exists: " + lines[0])
+                            pass
+                    except:
+                        College.objects.create(
+                                name=lines[0],
+                                address=lines[1],
+                                placement=lines[3],
+                                hostel=lines[4],
+                                transport=lines[5],
+                                link=lines[6]
+                            )
+                    clg = College.objects.get(name=lines[0])
+                    try:
+                        if Stream.objects.get(name=i.replace(".csv",""),college_name=clg):
+                            # print("Course for college already exists")
+                            continue
+                    except:
+                        Stream.objects.create(
+                            name=i.replace(".csv",""),
+                            fees=lines[2],
+                            college_name = clg
+                            )
+                        n=n+1
+                        print(f"Made stream {i.replace('.csv','')}:" + str(n))
+                        for j in Stream.objects.filter(college_name=clg):
+                            clg.courses.add(j.id)
+                        clg.save()
     return HttpResponse("check console")
