@@ -1,27 +1,39 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "base.html" %} {% load static %} {% block content %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Result</title>
-</head>
-
-<body>
-    <table>
-        <tr>
-            <td>
-                <h2 style="background: transparent; border-radius: 7px; ">{{info}} {{score}}</h2>
-            </td>
-        </tr>
-        <tr style="display: flex;flex-wrap: wrap;">
-            <td>
-                {% for i in subjects.items %}
-                <h3 style="background: transparent; border-radius: 7px; ">{{i.0}} : {{i.1}}</h3>
-                {% endfor %}
-            </td>
-        </tr>
-    </table>
-</body>
-
-</html>
+<!-- section -->
+<section class="inner_banner">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="full">
+                    <h3>Result</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end section -->
+<!-- section -->
+<div class="section layout_padding contact_section" style="background:white">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-8 col-sm-12">
+                <table>
+                    <tr>
+                        <td>
+                            <h1 style="background: transparent; border-radius: 7px; ">{{info}} {{score}}</h1>
+                        </td>
+                    </tr>
+                    <tr style="display: flex;flex-wrap: wrap;">
+                        <td>
+                            {% for i in subjects.items %}
+                            <h3 style="background: transparent; border-radius: 7px; ">{{i.0}} : {{i.1}}</h3>
+                            {% endfor %}
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

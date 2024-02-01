@@ -13,11 +13,15 @@ import csv
 from django.db import connection
 from django.views.decorators.cache import never_cache
 
+#This function is made to curbe direct access of pages by the page names.i.e:/feedback etc.
 def get_referer(request):
     referer = request.META.get('HTTP_REFERER')
     if not referer:
         return None
     return referer
+#Terms and conditions function
+def terms(request):         
+    return render(request,"terms.html")
 def home(request):
     return render(request,"index.html")
 def about(request):
@@ -200,6 +204,7 @@ def fillform(request):
         return redirect("/register")
     return render(request,"fillform.html")
 #MCQ are filtered here n modified.
+#add 3mcqs for each things which is selected by user at runtime.. for accurate result..
 @never_cache
 def mcq(request):
     if not get_referer(request):
@@ -254,12 +259,14 @@ def mcq(request):
         temp += list(cursor.fetchall())
     formatted_temp = []
     for i in temp:
-        formatted_temp.append([i[1],i[2],i[3],i[4],i[5],i[0]])
+        formatted_temp.append([i[0],i[2],i[3],i[4],i[5],i[6]])
     questions = random.sample(formatted_temp,15)
     return render(request, 'mcq.html', {'questions':questions})
-
+#To show detail analysis of result or score of user.
 @never_cache
 def result(request):
+    if not get_referer(request):
+        return redirect("/register")
     try:
         student = Student.objects.get(email=request.session["email"])
         result = eval(str(student.result)) # eval function is used to represent the score of student.
@@ -273,9 +280,9 @@ def add_to_db(request):
     return HttpResponse("check console")
     from os import listdir
     from os.path import isfile, join
-    onlyfiles = [f for f in listdir(r"D:\Specs v2\specs-venv\specsV2\sub\static") if isfile(join(r"D:\Specs v2\specs-venv\specsV2\sub\static", f))]
+    onlyfiles = [f for f in listdir(r"D:\Specs v2\specs-venv\specsV2\sub\static\\mcq") if isfile(join(r"D:\Specs v2\specs-venv\specsV2\sub\static\\mcq", f))]
     for i in onlyfiles:
-        with open(f'sub/static/{i}', mode ='r',encoding="utf8") as file:
+        with open(f'sub/static/mcq{i}', mode ='r',encoding="utf8") as file:
             csvFile = list(csv.reader(file))
             for lines in csvFile:
                 if lines != []: 
@@ -293,7 +300,7 @@ def add_to_db(request):
                     except:
                         continue
     return HttpResponse("check console")
-
+#Function for storing multiple csv of colleges and stream.
 def clg_to_db(request):
     # for i in College.objects.all():
     #     print(i.placement)
@@ -345,3 +352,4 @@ def clg_to_db(request):
                             clg.courses.add(j.id)
                         clg.save()
     return HttpResponse("check console")
+

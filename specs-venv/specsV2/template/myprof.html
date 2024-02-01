@@ -23,12 +23,12 @@
     <div class="container">
         <div class="container-fluid">
             <table class="table table-borderless text-light">
-                <form method="POST" action="" >
+                <form method="POST" action="">
                     {% csrf_token %}
-                    <tr  style="display: flex;flex-wrap: wrap;width:fit-content">
+                    <tr style="display: flex;flex-wrap: wrap;width:fit-content">
                         <th style="width: 10em;">Username:</th>
                         <td style="display: flex;flex-wrap: wrap;">
-                            <input type="text" name="uName" value="{{uName}}" style="background: white; border-bottom: 2px solid sienna;border-radius: 7px;"/>
+                            <input type="text" name="uName" value="{{uName}}" style="background: white; border-bottom: 2px solid sienna;border-radius: 7px;" />
                         </td>
                     </tr>
                     <tr style="display: flex;flex-wrap: wrap;width:fit-content">
@@ -64,13 +64,10 @@
             <table>
                 <tr>
                     <td id="feedback-submit">
-                        <button type="submit" style="border-radius: 10px; background-color:lemonchiffon;">Update Profile</button>
+                        <button type="submit" style="border-radius: 10px; background-color:lemonchiffon;cursor: pointer;">Update Profile
+                        </button>
                     </td>
                     <td> <br> <br></td>
-                    <!-- <td id="feedback-submit">
-                        <button type="submit" style="border-radius: 10px; background-color:lemonchiffon;">
-                    <a href="{% url 'logout' %} " style="color:crimson"> LogOut</a></button>
-                    </td> -->
                 </tr>
                 </form>
             </table>

@@ -1,30 +1,43 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    <title>Display Multiple Choice Questions</title>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
-    </script>
-</head>
-
-<body>
-    <h1>Multiple Choice Questions</h1>
-    <form action="#" method="post">
-        {% csrf_token %} {% for question in questions %}
-        <h2>{{ question.0 }}</h2>
-        <label>Options:</label>
-        <br />
-        <input required type="radio" name="answer_{{question.5}}" value="{{question.1}}" id="option_{{question.1}}_{{question.5}}" />
-        <label for="option_{{question.1}}_{{question.5}}">{{ question.1}}</label><br />
-        <input required type="radio" name="answer_{{question.5}}" value="{{question.2}}" id="option_{{question.2}}_{{question.5}}" />
-        <label for="option_{{question.2}}_{{question.5}}">{{ question.2}}</label><br />
-        <input required type="radio" name="answer_{{question.5}}" value="{{question.3}}" id="option_{{question.3}}_{{question.5}}" />
-        <label for="option_{{question.3}}_{{question.5}}">{{ question.3 }}</label><br />
-        <input required type="radio" name="answer_{{question.5 }}" value="{{question.4}}" id="option_{{question.4}}_{{question.5}}" />
-        <label for="option_{{question.4}}_{{question.5}}">{{ question.4 }}</label><br />
-        <br /> {% endfor %}
-        <button type="submit">Submit Answer</button>
-    </form>
-</body>
-
-</html>
+{% extends "base.html" %} {% load static %} {% block content %}
+<!-- section -->
+<section class="inner_banner">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="full">
+                    <h3>Multiple Choice Questions</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end section -->
+<!-- section -->
+<div class="section layout_padding contact_section" style="background:white">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-8 col-sm-12">
+                <form action="#" method="post">
+                    {% csrf_token %} {% for question in questions %}
+                    <h2>{{ question.1}}</h2>
+                    <label>Options:</label>
+                    <br />
+                    <input required type="radio" name="answer_{{question.0}}" value="{{question.2}}" id="option_{{question.2}}_{{question.0}}" />
+                    <label for="option_{{question.2}}_{{question.0}}">{{ question.2}}</label><br />
+                    <input required type="radio" name="answer_{{question.0}}" value="{{question.3}}" id="option_{{question.3}}_{{question.0}}" />
+                    <label for="option_{{question.3}}_{{question.0}}">{{ question.3}}</label><br />
+                    <input required type="radio" name="answer_{{question.0}}" value="{{question.4}}" id="option_{{question.4}}_{{question.0}}" />
+                    <label for="option_{{question.4}}_{{question.0}}">{{ question.4}}</label><br />
+                    <input required type="radio" name="answer_{{question.0 }}" value="{{question.5}}" id="option_{{question.5}}_{{question.0}}" />
+                    <label for="option_{{question.5}}_{{question.0}}">{{ question.5}}</label><br />
+                    <br /> {% endfor %}
+                    <div class="contact_form">
+                        <div><button type="submit" style="width:140px;height:50px;">Submit</button></div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+{% endblock %}

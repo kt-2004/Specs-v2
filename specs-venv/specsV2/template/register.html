@@ -245,7 +245,7 @@
             <form action="" id="form" method="POST">
                 {% csrf_token %}
                 <div class="box-login" id="login">
-                    <div class="top-header">
+                    <div class="top-header" style="-webkit-text-fill-color: navajowhite;">
                         <h3>{{error}}</h3>
                         <h3>Hello, Again!</h3>
                         <small>We are happy to have you back.</small>
@@ -265,7 +265,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="remember">
+                        <div class="remember" style="-webkit-text-fill-color: navajowhite;">
                             <input type="checkbox" id="formCheck" class="check">
                             <label for="formCheck">Remember Me</label>
                         </div>
@@ -273,12 +273,12 @@
                             <input type="submit" name="login" class="input-submit" value="Sign In">
                         </div>
                         <div class="forgot">
-                            <a href="{% url 'forgotpass' %}">Forgot password?</a>
+                            <a href="{% url 'forgotpass' %}" style="-webkit-text-fill-color: navajowhite;">Forgot password?</a>
                         </div>
                     </div>
                 </div>
                 <div class="box-register" id="register">
-                    <div class="top-header">
+                    <div class="top-header" style="-webkit-text-fill-color: navajowhite;">
                         <h3>Sign Up, Now!</h3>
                         <small>We are happy to have you with us.</small>
                     </div>
@@ -306,11 +306,11 @@
                             </div>
                         </div>
 
-                        <div class="remember">
+                        <div class="remember" style="-webkit-text-fill-color: navajowhite;">
                             <input type="checkbox" id="formCheck2" class="check">
                             <label for="formCheck2">Remember Me</label>
                         </div>
-                        <div class="input-field">
+                        <div class="input-field" style="-webkit-text-fill-color: navajowhite;">
                             <input type="submit" value="SIGN UP" name="register" class="input-submit" />
                         </div>
 
