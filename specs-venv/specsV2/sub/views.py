@@ -255,7 +255,6 @@ def mcq(request):
             print(j,t2)
             temp+=random.sample(t2,3)
             t2=[]
-
         cursor.execute(f"SELECT * FROM sub_MCQ WHERE subject='{stud.subject1}'")
         temp +=  random.sample(list(cursor.fetchall()),3)
         cursor.execute(f"SELECT * FROM sub_MCQ WHERE subject='{stud.subject2}'")
@@ -264,7 +263,7 @@ def mcq(request):
         temp +=  random.sample(list(cursor.fetchall()),3)
     questions = []
     for i in temp:
-        questions.append([i[0],i[2],i[3],i[4],i[5],i[6]])
+        questions.append([i[0],i[2].replace("Q.",""),i[3],i[4],i[5],i[6]])
     return render(request, 'mcq.html', {'questions':questions})
 #To show detail analysis of result or score of user.
 @never_cache
