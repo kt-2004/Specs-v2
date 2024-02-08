@@ -116,6 +116,7 @@ class MCQ(models.Model):
 class Stream(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.TextField(default="null",blank=True)
+    desc = models.TextField(default="null",blank=True)
     fees = models.CharField(max_length=255,blank=True,default=-1)
     description = models.TextField(max_length=255,default="Null",blank=True)
     college_name = models.ForeignKey('College', on_delete=models.CASCADE,blank=True)

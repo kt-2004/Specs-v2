@@ -38,6 +38,9 @@
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+    <!-- Math Jax -->
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
 </head>
 
 <body id="home" data-spy="scroll" data-target="#navbar-wd" data-offset="98">
@@ -61,7 +64,7 @@
                     <span></span>
                 </button>
                 <div class="collapse navbar-collapse justify-content-end" id="navbar-wd" style="height: fit-content;">
-                    <ul class="navbar-nav">
+                    <ul class="navbar-nav" list-style-type="circle">
                         <li><a class="nav-link active" href="{% url 'home' %}">Home</a></li>
                         <li><a class="nav-link" href="{% url 'about' %}">About</a></li>
                         <li><a class="nav-link" href="{% url 'contact' %}">Contact Us</a></li>
@@ -99,9 +102,9 @@
                     <div class="footer_blog footer_menu white_fonts">
                         <h3>CareerSpecs Services</h3>
                         <ul>
-                            <li style="-webkit-text-fill-color: darkgoldenrod;">> Personalized Stream Recommendations</li>
-                            <li style="-webkit-text-fill-color: darkgoldenrod;">> Aptitude Testing</li>
-                            <li style="-webkit-text-fill-color: darkgoldenrod;">> College Suggestions</li>
+                            <li style="-webkit-text-fill-color: darkgoldenrod;">Personalized Stream Recommendations</li>
+                            <li style="-webkit-text-fill-color: darkgoldenrod;">Aptitude Testing</li>
+                            <li style="-webkit-text-fill-color: darkgoldenrod;">College Suggestions</li>
                         </ul>
                     </div>
                 </div>
@@ -123,12 +126,14 @@
                 <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
                     <div class="footer_blog footer_menu white_fonts">
                         <h3>Contact us</h3>
-                        <ul style="-webkit-text-fill-color: darkgoldenrod;">
-                            <li><i class="fa-solid fa-map-location-dot fa-xl" style="margin-right: 10px;margin-top: 10px;"></i>AHMEDABAD, INDIA</li>
-                            <li><i class="fa-solid fa-envelope fa-xl" style="margin-right: 10px;margin-top: 10px;"></i>CareerSpecs06@gmail.com</span>
-                            </li>
-                            <li><i class="fa-solid fa-tty fa-xl" style="margin-right: 10px;margin-top: 10px;"></i>+919426570429</li>
-                        </ul>
+                        <h6>
+                            <ul style="-webkit-text-fill-color: darkgoldenrod;">
+                                <li><i class="fa-solid fa-map-location-dot fa-xl" style="margin-right: 10px;margin-top: 10px;"></i>AHMEDABAD, INDIA</li>
+                                <li><i class="fa-solid fa-envelope fa-xl" style="margin-right: 10px;margin-top: 10px;"></i>CareerSpecs06@gmail.com</span>
+                                </li>
+                                <li><i class="fa-solid fa-tty fa-xl" style="margin-right: 10px;margin-top: 10px;"></i>+919426570429</li>
+                            </ul>
+                        </h6>
                     </div>
                 </div>
             </div>

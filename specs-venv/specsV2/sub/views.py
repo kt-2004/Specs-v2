@@ -114,7 +114,7 @@ def logout(request):
     return response
 #Register and Login function are combined here using User model for both.
 def register(request):
-    response = redirect("home")
+    response = redirect("/home/?registered")
     if request.method=='POST':
         if request.POST.get('register', False): #For Register...
             uName=request.POST['uName']
@@ -212,8 +212,7 @@ def mcq(request):
     with connection.cursor() as cursor:
         cursor.execute(f"SELECT * FROM sub_student WHERE email='{request.session['email']}'")
         for i in cursor.fetchall():
-            print(i[-1])
-            if i[-1] > -1:
+            if i[-1] != -1:
                 return HttpResponse("<h1>Can't Give Exam Twice.</h1>")
     if request.method == "POST":
         score=0
@@ -247,20 +246,25 @@ def mcq(request):
     with connection.cursor() as cursor:
         for i in stud.get_interested_subjects_list():
             cursor.execute(f"SELECT * FROM sub_MCQ WHERE subject='{i}'")
-            temp += list(cursor.fetchall())
-        for i in stud.get_skills_list():
-            cursor.execute(f"SELECT * FROM sub_MCQ WHERE subject='{i}'")
-            temp += list(cursor.fetchall())
+            t1 = list(cursor.fetchall())
+            temp+=random.sample(t1,3)
+            t1=[]
+        for j in stud.get_skills_list():
+            cursor.execute(f"SELECT * FROM sub_MCQ WHERE subject='{j}'")
+            t2 = list(cursor.fetchall())
+            print(j,t2)
+            temp+=random.sample(t2,3)
+            t2=[]
+
         cursor.execute(f"SELECT * FROM sub_MCQ WHERE subject='{stud.subject1}'")
-        temp += list(cursor.fetchall())
+        temp +=  random.sample(list(cursor.fetchall()),3)
         cursor.execute(f"SELECT * FROM sub_MCQ WHERE subject='{stud.subject2}'")
-        temp += list(cursor.fetchall())
+        temp +=  random.sample(list(cursor.fetchall()),3)
         cursor.execute(f"SELECT * FROM sub_MCQ WHERE subject='{stud.subject3}'")
-        temp += list(cursor.fetchall())
-    formatted_temp = []
+        temp +=  random.sample(list(cursor.fetchall()),3)
+    questions = []
     for i in temp:
-        formatted_temp.append([i[0],i[2],i[3],i[4],i[5],i[6]])
-    questions = random.sample(formatted_temp,15)
+        questions.append([i[0],i[2],i[3],i[4],i[5],i[6]])
     return render(request, 'mcq.html', {'questions':questions})
 #To show detail analysis of result or score of user.
 @never_cache
@@ -277,12 +281,12 @@ def result(request):
 #Adding csv files of mcq to database here.Get refered function is not required here.
 #For-loop is used to add multiple files at once. 
 def add_to_db(request):
-    return HttpResponse("check console")
+    # return HttpResponse("check console")
     from os import listdir
     from os.path import isfile, join
     onlyfiles = [f for f in listdir(r"D:\Specs v2\specs-venv\specsV2\sub\static\\mcq") if isfile(join(r"D:\Specs v2\specs-venv\specsV2\sub\static\\mcq", f))]
     for i in onlyfiles:
-        with open(f'sub/static/mcq{i}', mode ='r',encoding="utf8") as file:
+        with open(f'sub/static/mcq/{i}', mode ='r',encoding="utf8") as file:
             csvFile = list(csv.reader(file))
             for lines in csvFile:
                 if lines != []: 

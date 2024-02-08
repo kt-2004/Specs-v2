@@ -1,6 +1,23 @@
 {% extends "base.html" %} {% load static %}
 <!-- Start Banner -->
 {% block content %}
+
+<label id="registered" style="display:none;">
+    <input type="checkbox" class="alertCheckbox" autocomplete="off" />
+    <div class="alert error">
+      <span class="alertText">Registeration Successful.
+      <br class="error"/></span>
+    </div>
+  </label>
+
+<script>
+    const searchParams = new URLSearchParams(window.location.search);
+    if (searchParams.has('registered')) {
+        // document.getElementById("registered").style.display = "block";
+        alert("Registration successful.")
+    }
+</script>
+
 <div class="ulockd-home-slider">
     <div class="container-fluid">
         <div class="row">
