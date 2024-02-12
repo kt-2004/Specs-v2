@@ -22,7 +22,7 @@ class Contact(models.Model):
 
 class User(models.Model):
     id = models.AutoField(primary_key=True)
-    uName=models.CharField(max_length=255)
+    uName=models.CharField(max_length=255,unique=True)
     uEmail=models.EmailField()
     uPass = models.CharField(max_length=255)
     uPhone = PhoneNumberField()

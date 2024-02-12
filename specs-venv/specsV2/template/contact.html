@@ -26,21 +26,21 @@
             </div>
             <div class="col-lg-4 col-md-4 col-sm-12">
                 <div class="contact_form">
-                    <form method="POST" action="">
+                    <form method="POST" action="" onsubmit="alert('Thank you for contacting us. We will contact you back soon.')">
                         {% csrf_token %}
                         <fieldset>
                             <div class="full field">
-                                <input type="text" placeholder="Your Name" name="cName" style="background: transparent; border-bottom: 2px solid sienna;" />
+                                <input type="text" required placeholder="Your Name" name="cName" style="background: transparent; border-bottom: 2px solid sienna;" />
                             </div>
                             <div class="full field">
-                                <input type="email" placeholder="Email Address" name="cEmail" style="background: transparent;border-bottom: 2px solid sienna; " />
+                                <input type="email" required placeholder="Email Address" name="cEmail" style="background: transparent;border-bottom: 2px solid sienna; " pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" />
                             </div>
                             <div class="full field">
-                                <input type="phn" placeholder="Phone Number" name="cPhone" style="background: transparent; border-bottom: 2px solid sienna;" />
+                                <input type="numbers" required maxlength="10" minlength="10" placeholder="Phone Number" name="cPhone" style="background: transparent; border-bottom: 2px solid sienna;" />
                             </div>
                             <div class="full field">
                                 <textarea id="feedback-textarea" placeholder="Message" style="background: transparent; border-bottom: 2px solid sienna;"></textarea>
-                                <input style="visibility: hidden;" id="feedback-input" type="text" name="cMsg" />
+                                <input style="visibility: hidden;" required id="feedback-input" type="text" name="cMsg" />
                             </div>
                             <div class="full field">
                                 <div class="center"><button style="border-bottom: 2px solid sienna; ">SEND</button></div>

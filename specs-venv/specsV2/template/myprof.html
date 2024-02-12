@@ -23,7 +23,7 @@
     <div class="container">
         <div class="container-fluid">
             <table class="table table-borderless text-light">
-                <form method="POST" action="">
+                <form method="POST" action="" onsubmit="alert('Profile Updated successfully')">
                     {% csrf_token %}
                     <tr style="display: flex;flex-wrap: wrap;width:fit-content">
                         <th style="width: 10em;">Username:</th>
@@ -34,7 +34,7 @@
                     <tr style="display: flex;flex-wrap: wrap;width:fit-content">
                         <th style="width: 10em;">Email:</th>
                         <td>
-                            <input type="email" name="uEmail" value="{{uEmail}}" style="background: white; border-bottom: 2px solid sienna;border-radius: 7px;" />
+                            <input type="email" name="uEmail" value="{{uEmail}}" style="background: white; border-bottom: 2px solid sienna;border-radius: 7px;" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" />
                         </td>
                     </tr>
                     <tr style="display: flex;flex-wrap: wrap;width:fit-content">

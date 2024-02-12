@@ -61,11 +61,11 @@
             </script>
         </div>
         <table class="table table-borderless text-light" style="-webkit-text-fill-color: midnightblue;">
-            <form method="POST" action="">
+            <form method="POST" action="" onsubmit="alert('Password changed successfully.')">
                 {% csrf_token %}
                 <tr>
-                    <th>Username:</th>
-                    <td><input type="text" name="uName" placeholder="Username" style="border-radius: 7px;" /></td>
+                    <th>E-mail:</th>
+                    <td><input type="email" name="uEmail" placeholder="E-mail" style="border-radius: 7px;" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" /></td>
                 </tr>
                 <tr>
                     <th>New-password:</th>

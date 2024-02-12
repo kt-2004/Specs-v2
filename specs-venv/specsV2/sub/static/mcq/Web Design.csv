@@ -1,0 +1,31 @@
+Question,Option A,Option B,Option C,Option D,Answer
+Q. What does HTML stand for in web design?,A) Hyper Text Markup Language,B) High Tech Multimedia Language,C) Home Tool Markup Language,D) Hyperlink and Text Manipulation Language,Answer: A
+Q. Which CSS property is used to change the text color of an element?,A) text-color,B) color,C) font-color,D) text-style,Answer: B
+Q. What is the purpose of JavaScript in web design?,A) To style web pages,B) To create layouts,C) To add interactivity and dynamic features,D) To define page structure,Answer: C
+Q. What is the standard language used for styling web pages?,A) HTML,B) JavaScript,C) CSS,D) PHP,Answer: C
+Q. Which tag is used to define a hyperlink in HTML?,A) <a>,B) <link>,C) <href>,D) <hyperlink>,Answer: A
+Q. What does CSS stand for in web design?,A) Computer Style Sheets,B) Creative Style Syntax,C) Cascading Style Sheets,D) Content Style System,Answer: C
+Q. Which HTML tag is used to create a line break?,A) <br>,B) <line>,C) <break>,D) <lb>,Answer: A
+Q. What is the purpose of the <head> tag in HTML?,A) To define the main content of the page,B) To provide metadata about the document,C) To create a heading for the page,D) To define the footer of the page,Answer: B
+Q. What is the role of a web browser in the context of web design?,A) To write code for web pages,B) To host websites,C) To display web pages to users,D) To design web graphics,Answer: C
+Q. Which CSS property is used to change the background color of an element?,A) background-color,B) color,C) text-color,D) bg-color,Answer: A
+Q. What is the purpose of responsive web design?,A) To create visually appealing websites,B) To optimize websites for search engines,C) To ensure websites work well on various devices and screen sizes,D) To improve website security,Answer: C
+Q. What does SEO stand for in the context of web design?,A) Software Engineering Organization,B) Search Engine Optimization,C) Secure Encryption Online,D) Server Error Operation,Answer: B
+Q. Which tag is used to embed an image in HTML?,A) <img>,B) <image>,C) <picture>,D) <src>,Answer: A
+Q. What is the purpose of the <footer> tag in HTML?,A) To define the main content of the page,B) To provide metadata about the document,C) To create a heading for the page,D) To define the footer of the page,Answer: D
+Q. What is the purpose of the <nav> tag in HTML?,A) To define a section that contains navigation links,B) To define the main content of the page,C) To create a heading for the page,D) To define the footer of the page,Answer: A
+Q. What does UX stand for in web design?,A) User Experience,B) Universal XML,C) Ultimate Experience,D) User Exception,Answer: A
+Q. What is the purpose of a wireframe in web design?,A) To create a visual representation of the website layout,B) To write code for web pages,C) To optimize websites for search engines,D) To define website colors and fonts,Answer: A
+Q. Which CSS property is used to change the font size of text?,A) font-size,B) text-size,C) size,D) font-style,Answer: A
+Q. What is the purpose of the <section> tag in HTML?,A) To define a section that contains navigation links,B) To define a section of the document,C) To create a heading for the page,D) To define the footer of the page,Answer: B
+Q. Which programming language is primarily used for client-side scripting in web development?,A) Java,B) PHP,C) JavaScript,D) Python,Answer: C
+Q. What is the purpose of the <div> tag in HTML?,A) To define a division or section of the document,B) To create a heading for the page,C) To define a hyperlink,D) To embed multimedia content,Answer: A
+Q. What is the purpose of a favicon in web design?,A) To optimize websites for search engines,B) To define website colors and fonts,C) To create a visual representation of the website layout,D) To provide a small icon displayed in the browser tab or next to the website URL,Answer: D
+Q. What is the purpose of the <input> tag in HTML?,A) To define a division or section of the document,B) To create a form input element,C) To define a hyperlink,D) To embed multimedia content,Answer: B
+Q. What is the purpose of the <iframe> tag in HTML?,A) To define a division or section of the document,B) To create a heading for the page,C) To embed another HTML document within the current document,D) To define the footer of the page,Answer: C
+Q. Which CSS property is used to add space between the borders of an element and its content?,A) padding,B) margin,C) border-spacing,D) space-between,Answer: A
+Q. What is the purpose of the <meta> tag in HTML?,A) To define a division or section of the document,B) To create a form input element,C) To provide metadata about the document,D) To embed multimedia content,Answer: C
+Q. What is the purpose of the <form> tag in HTML?,A) To define a division or section of the document,B) To create a form for user input,C) To define a hyperlink,D) To embed multimedia content,Answer: B
+Q. What is the purpose of the <table> tag in HTML?,A) To define a division or section of the document,B) To create a table for tabular data,C) To define a hyperlink,D) To embed multimedia content,Answer: B
+Q. What is the purpose of the <canvas> tag in HTML?,A) To define a division or section of the document,B) To create a form input element,"C) To draw graphics, animations, or other visual images using JavaScript",D) To embed multimedia content,Answer: C
+Q. What does UI stand for in web design?,A) User Interface,B) Unified Interaction,C) Universal Integration,D) User Identification,Answer: A

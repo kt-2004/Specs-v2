@@ -1,26 +1,52 @@
-Question,optionA,optionB,optionC,optionD,Answer
-Q. Which of the following is not a feature of a developing economy?,A) High Per Capita Income,B) High Poverty Rate,C) High Unemployment Rate,D) Unequal Distribution of Wealth,Answer: A
-"Q. In the context of the Indian economy, the term 'GDP' stands for:",A) Gross Domestic Product,B) Gross Development Product,C) General Development Policy,D) Grand Domestic Policy,Answer: A
-Q. What is the main objective of the poverty alleviation programs in India?,A) Increasing GDP,B) Reducing Inflation,C) Eradicating Poverty,D) Enhancing Export,Answer: C
-Q. Which sector is the largest employer in India?,A) Agricultural Sector,B) Industrial Sector,C) Service Sector,D) Information Technology Sector,Answer: A
-Q. The 'Human Development Index (HDI)' is a composite index based on:,"A) Income, Health, and Education",B) Industrial Output,C) Agricultural Productivity,D) Export Performance,Answer: A
-Q. The concept of 'demand' in economics refers to:,A) The quantity of a good or service that consumers are willing to buy at a given price,B) The quantity of a good or service that producers are willing to sell at a given price,C) The total quantity of a good or service available in the market,D) The total quantity of money in circulation,Answer: A
-"Q. Which market structure is characterized by a large number of sellers and buyers, homogeneous products, and free entry and exit?",A) Monopoly,B) Oligopoly,C) Perfect Competition,D) Monopolistic Competition,Answer: C
-"Q. In the context of elasticity, if the percentage change in quantity demanded is greater than the percentage change in price, the demand is:",A) Elastic,B) Inelastic,C) Unitary Elastic,D) Perfectly Elastic,Answer: A
-Q. Which of the following is a determinant of supply in the market?,A) Consumer Preferences,B) Technology,C) Price of Related Goods,D) Consumer Income,Answer: B
-Q. The concept of 'marginal cost' is associated with:,A) The additional cost of producing one more unit of a good,B) The total cost of production,C) The average cost of production,D) The fixed cost of production,Answer: A
-Q. What is the primary goal of fiscal policy?,A) Price Stability,B) Full Employment,C) Economic Growth,D) Income Redistribution,Answer: B
-Q. Which measure is used to assess the overall health of an economy?,A) Inflation Rate,B) Unemployment Rate,C) Gross Domestic Product (GDP),D) Consumer Price Index (CPI),Answer: C
-Q. What is the function of the Reserve Bank of India (RBI) in the Indian economy?,A) Fiscal Policy Formulation,B) Monetary Policy Formulation,C) Foreign Trade Regulation,D) Industrial Policy Formulation,Answer: B
-Q. The concept of 'inflation' refers to:,A) Increase in the general price level of goods and services,B) Decrease in the general price level of goods and services,C) Increase in the quantity of money in circulation,D) Decrease in the quantity of money in circulation,Answer: A
-Q. Which of the following is a component of aggregate demand?,A) Consumer Spending,B) Government Revenue,C) Foreign Investments,D) All of the above,Answer: D
-Q. Which of the following is an example of a tertiary sector activity?,A) Agriculture,B) Manufacturing,C) Service Sector,D) Mining,Answer: C
-Q. The term 'Gini Coefficient' is used to measure:,A) Unemployment Rate,B) Income Inequality,C) Poverty Rate,D) Economic Growth,Answer: B
-Q. What is the role of NABARD in the Indian economy?,A) Regulation of Stock Market,B) Rural Development and Agriculture Financing,C) Monetary Policy Implementation,D) Industrial Policy Formulation,Answer: B
-Q. Which economic reform aimed at reducing the fiscal deficit in India?,A) LPG Reforms,B) Green Revolution,C) Economic Liberalization,D) Nationalization,Answer: C
-Q. What is the significance of the 'Green Revolution' in Indian agriculture?,A) Increased agricultural productivity,B) Expansion of industrial sector,C) Urbanization,D) Privatization of agricultural land,Answer: A
-Q. What does the 'production possibility curve' represent?,A) The combination of goods a country can produce efficiently,B) The total production of a country,C) The demand and supply in the market,D) The inflation rate in the economy,Answer: A
-"Q. In a monopolistic competition market structure, firms have:",A) Homogeneous products,B) Identical prices,C) Perfect information,D) Differentiated products,Answer: D
-Q. What is the primary tool of monetary policy used by the Reserve Bank of India?,A) Open Market Operations,B) Fiscal Policy,C) Subsidies,D) Taxation,Answer: A
-Q. What is the 'liquidity trap' in macroeconomics?,A) A situation where interest rates are high,"B) A situation where interest rates are low, and saving is preferred over spending",C) A situation of hyperinflation,D) A situation of deflation,Answer: B
-Q. The concept of 'opportunity cost' is associated with:,,A) Microeconomics,B) Macroeconomics,C) Behavioral Economics,D) Institutional Economics
+Question,optionA,optionB,optionC,optionD,Answer
+
+Q. Which of the following is not a feature of a developing economy?,A) High Per Capita Income,B) High Poverty Rate,C) High Unemployment Rate,D) Unequal Distribution of Wealth,Answer: A
+
+"Q. In the context of the Indian economy, the term 'GDP' stands for:",A) Gross Domestic Product,B) Gross Development Product,C) General Development Policy,D) Grand Domestic Policy,Answer: A
+
+Q. What is the main objective of the poverty alleviation programs in India?,A) Increasing GDP,B) Reducing Inflation,C) Eradicating Poverty,D) Enhancing Export,Answer: C
+
+Q. Which sector is the largest employer in India?,A) Agricultural Sector,B) Industrial Sector,C) Service Sector,D) Information Technology Sector,Answer: A
+
+Q. The 'Human Development Index (HDI)' is a composite index based on:,"A) Income, Health, and Education",B) Industrial Output,C) Agricultural Productivity,D) Export Performance,Answer: A
+
+Q. The concept of 'demand' in economics refers to:,A) The quantity of a good or service that consumers are willing to buy at a given price,B) The quantity of a good or service that producers are willing to sell at a given price,C) The total quantity of a good or service available in the market,D) The total quantity of money in circulation,Answer: A
+
+"Q. Which market structure is characterized by a large number of sellers and buyers, homogeneous products, and free entry and exit?",A) Monopoly,B) Oligopoly,C) Perfect Competition,D) Monopolistic Competition,Answer: C
+
+"Q. In the context of elasticity, if the percentage change in quantity demanded is greater than the percentage change in price, the demand is:",A) Elastic,B) Inelastic,C) Unitary Elastic,D) Perfectly Elastic,Answer: A
+
+Q. Which of the following is a determinant of supply in the market?,A) Consumer Preferences,B) Technology,C) Price of Related Goods,D) Consumer Income,Answer: B
+
+Q. The concept of 'marginal cost' is associated with:,A) The additional cost of producing one more unit of a good,B) The total cost of production,C) The average cost of production,D) The fixed cost of production,Answer: A
+
+Q. What is the primary goal of fiscal policy?,A) Price Stability,B) Full Employment,C) Economic Growth,D) Income Redistribution,Answer: B
+
+Q. Which measure is used to assess the overall health of an economy?,A) Inflation Rate,B) Unemployment Rate,C) Gross Domestic Product (GDP),D) Consumer Price Index (CPI),Answer: C
+
+Q. What is the function of the Reserve Bank of India (RBI) in the Indian economy?,A) Fiscal Policy Formulation,B) Monetary Policy Formulation,C) Foreign Trade Regulation,D) Industrial Policy Formulation,Answer: B
+
+Q. The concept of 'inflation' refers to:,A) Increase in the general price level of goods and services,B) Decrease in the general price level of goods and services,C) Increase in the quantity of money in circulation,D) Decrease in the quantity of money in circulation,Answer: A
+
+Q. Which of the following is a component of aggregate demand?,A) Consumer Spending,B) Government Revenue,C) Foreign Investments,D) All of the above,Answer: D
+
+Q. Which of the following is an example of a tertiary sector activity?,A) Agriculture,B) Manufacturing,C) Service Sector,D) Mining,Answer: C
+
+Q. The term 'Gini Coefficient' is used to measure:,A) Unemployment Rate,B) Income Inequality,C) Poverty Rate,D) Economic Growth,Answer: B
+
+Q. What is the role of NABARD in the Indian economy?,A) Regulation of Stock Market,B) Rural Development and Agriculture Financing,C) Monetary Policy Implementation,D) Industrial Policy Formulation,Answer: B
+
+Q. Which economic reform aimed at reducing the fiscal deficit in India?,A) LPG Reforms,B) Green Revolution,C) Economic Liberalization,D) Nationalization,Answer: C
+
+Q. What is the significance of the 'Green Revolution' in Indian agriculture?,A) Increased agricultural productivity,B) Expansion of industrial sector,C) Urbanization,D) Privatization of agricultural land,Answer: A
+
+Q. What does the 'production possibility curve' represent?,A) The combination of goods a country can produce efficiently,B) The total production of a country,C) The demand and supply in the market,D) The inflation rate in the economy,Answer: A
+
+"Q. In a monopolistic competition market structure, firms have:",A) Homogeneous products,B) Identical prices,C) Perfect information,D) Differentiated products,Answer: D
+
+Q. What is the primary tool of monetary policy used by the Reserve Bank of India?,A) Open Market Operations,B) Fiscal Policy,C) Subsidies,D) Taxation,Answer: A
+
+Q. What is the 'liquidity trap' in macroeconomics?,A) A situation where interest rates are high,"B) A situation where interest rates are low, and saving is preferred over spending",C) A situation of hyperinflation,D) A situation of deflation,Answer: B
+
+Q. The concept of 'opportunity cost' is associated with:,A) Microeconomics,B) Macroeconomics,C) Behavioral Economics,D) Institutional Economics,Answer: A
+

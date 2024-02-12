@@ -27,7 +27,7 @@
                         {% csrf_token %}
                         <fieldset>
                             <div class="full field" id="email-sec">
-                                <input type="email" id="email" placeholder="Your Email" name="email" />
+                                <input type="email" id="email" placeholder="Your Email" name="email" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" />
                             </div>
                             <div class="full field" id="otp-sec">
                                 <input type="numbers" placeholder="Enter OTP" name="OTP" />

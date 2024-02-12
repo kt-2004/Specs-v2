@@ -1,6 +1,7 @@
 from collections import defaultdict
 from datetime import datetime
 import os
+from MySQLdb import IntegrityError as I
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.shortcuts import redirect,render
@@ -58,14 +59,14 @@ def changepass(request):
         return redirect("/register")
     if request.method=="POST":
         response=redirect("/?password_changed")#After changing password gets user to home page.
-        uName = request.POST['uName']
-        response.set_cookie('username',uName)#For getting username also in case of new or updated for name get from the cookie.
-        request.session["username"] = uName
+        uEmail = request.POST['uEmail']
+        response.set_cookie('username', User.objects.get(uEmail=uEmail).uName)#For getting username also in case of new or updated for name get from the cookie.
+        request.session["username"] = User.objects.get(uEmail=uEmail).uName
         uPass = request.POST['uPass']
         print(list(User.objects.all().values_list('uName', flat=True)))#for cmd
-        ch=User.objects.get(uName=uName)
+        ch=User.objects.get(uEmail=uEmail)
         ch.uPass=uPass
-        ch.uName=uName 
+        ch.uName=User.objects.get(uEmail=uEmail).uName
         ch.save()
         return response
     else:
@@ -106,7 +107,7 @@ def myprof(request):
         return redirect("/register")
 #Logout...
 def logout(request):
-    response = render(request,"index.html")
+    response = redirect("/home/?logout")
     response.set_cookie('username', None)
     response.set_cookie("isLoggedIn", False)
     request.session['username'] = None
@@ -116,22 +117,25 @@ def logout(request):
 def register(request):
     response = redirect("/home/?registered")
     if request.method=='POST':
-        if request.POST.get('register', False): #For Register...
-            uName=request.POST['uName']
-            uEmail=request.POST['uEmail']
-            uPass=request.POST['uPass']
-            uPhone=request.POST['uPhone']
+        if request.POST.get('register', True): #For Register...
+            uName=request.POST['uNameR']
+            uEmail=request.POST['uEmailR']
+            uPass=request.POST['uPassR']
+            uPhone=request.POST['uPhoneR']
             formData=User(uName=uName,uEmail=uEmail,uPass=uPass,uPhone=uPhone)
-            formData.save()
+            try:
+                formData.save()
+            except Exception as e:
+                return redirect('/register/?exists')
             response.set_cookie('username',uName)
             request.session['username'] = uName
             print(request.session['username'])
             response.set_cookie('isLoggedIn',True)
             print("user saved" + str(formData))
             return response
-        elif request.POST.get('login', False):  #For Login...
-            uEmail=request.POST['uEmail']
-            uPass=request.POST['uPass']
+        elif request.POST.get('login', True):  #For Login...
+            uEmail=request.POST['uEmailL']
+            uPass=request.POST['uPassL']
             try:
                 user=User.objects.get(uEmail=uEmail)
             except:
@@ -212,43 +216,43 @@ def mcq(request):
     with connection.cursor() as cursor:
         cursor.execute(f"SELECT * FROM sub_student WHERE email='{request.session['email']}'")
         for i in cursor.fetchall():
-            if i[-1] != -1:
-                return HttpResponse("<h1>Can't Give Exam Twice.</h1>")
+            if i[-1] != -1: #if score is -1 then you can give xam its a default marks.
+                return HttpResponse("<h1>Can't Give Exam Twice.</h1>")  #if score is not -1 then you cannot give xam.
     if request.method == "POST":
         score=0
-        subjects = {}
+        subjects = {}   #dictionary
         corrects = {}
         subjects = defaultdict(lambda: 0, subjects)
         corrects = defaultdict(lambda: 0, corrects)
         for i in request.POST.items():
             if "answer_" in i[0]:
                 question_id = i[0].replace("answer_","")
-                if MCQ.objects.get(id=question_id).correct == i[1].split(")")[0]:
-                    score+=1
+                if MCQ.objects.get(id=question_id).correct == i[1].split(")")[0]:   #to check whether the ans is matching with correct ans in the give Que or not.Que id is to identify ques. 
+                    score+=1    #add 1marks for each correct answer.
                     subjects[MCQ.objects.get(id=question_id).subject]+=1
                     corrects[MCQ.objects.get(id=question_id).subject]+=1
                 else:
                     subjects[MCQ.objects.get(id=question_id).subject]+=1
-        print(dict(subjects))
-        print(dict(corrects))
-        request.session["score"]=score
+        print(dict(subjects))   #cmd msg
+        print(dict(corrects))   #cmd msg
+        request.session["score"]=score  #print score on the browser.
         for i in subjects.keys():
             subjects[i] = str(corrects[i]) + "/" + str(subjects[i])
-        request.session["subjects"]=subjects
-        print(str(subjects))
-        t = Student.objects.get(email=request.session["email"])
+        request.session["subjects"]=subjects    #here format of score is given i.e Acc=3/3
+        print(str(subjects))    #cmd msg
+        t = Student.objects.get(email=request.session["email"]) 
         t.result = str(dict(subjects))
         t.score = score
         t.save()
         return redirect("/result")
-    temp = []
-    stud = Student.objects.get(email=request.session["email"])
+    temp = []   #empty list for mcqs to be given for test.
+    stud = Student.objects.get(email=request.session["email"])  #gets student email from fillform.
     with connection.cursor() as cursor:
         for i in stud.get_interested_subjects_list():
             cursor.execute(f"SELECT * FROM sub_MCQ WHERE subject='{i}'")
-            t1 = list(cursor.fetchall())
-            temp+=random.sample(t1,3)
-            t1=[]
+            t1 = list(cursor.fetchall())    #fetch all ques from user selected int.subs.
+            temp+=random.sample(t1,3)       #provide random 3 ques from them.
+            t1=[]                           
         for j in stud.get_skills_list():
             cursor.execute(f"SELECT * FROM sub_MCQ WHERE subject='{j}'")
             t2 = list(cursor.fetchall())
@@ -263,7 +267,8 @@ def mcq(request):
         temp +=  random.sample(list(cursor.fetchall()),3)
     questions = []
     for i in temp:
-        questions.append([i[0],i[2].replace("Q.",""),i[3],i[4],i[5],i[6]])
+        questions.append([i[0],i[2].replace("Q.",""),i[3],i[4],i[5],i[6]])  #here Q will get replaced by numbers using forloop counter.
+    random.shuffle(questions)
     return render(request, 'mcq.html', {'questions':questions})
 #To show detail analysis of result or score of user.
 @never_cache
@@ -288,9 +293,12 @@ def add_to_db(request):
         with open(f'sub/static/mcq/{i}', mode ='r',encoding="utf8") as file:
             csvFile = list(csv.reader(file))
             for lines in csvFile:
-                if lines != []: 
-                    print((lines[5]))
+                if lines != [] and 'Question' not in lines: 
                     try:
+                        if MCQ.objects.get(question=lines[0]):  #new condition to check  replicas of csv files.
+                            pass
+                    except:
+                        print(lines)
                         MCQ.objects.create(
                             correct=(lines[5].split(":")[1]).replace(" ",""),
                             question=lines[0],
@@ -300,7 +308,6 @@ def add_to_db(request):
                             optionD=lines[4],
                             subject=i.replace(".csv","")
                         )
-                    except:
                         continue
     return HttpResponse("check console")
 #Function for storing multiple csv of colleges and stream.

@@ -14,7 +14,11 @@
     const searchParams = new URLSearchParams(window.location.search);
     if (searchParams.has('registered')) {
         // document.getElementById("registered").style.display = "block";
-        alert("Registration successful.")
+        alert("Logged in successfully.")
+    }
+    if (searchParams.has('logout')) {
+        // document.getElementById("registered").style.display = "block";
+        alert("Logged out successfully.")
     }
 </script>
 

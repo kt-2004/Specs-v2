@@ -239,7 +239,7 @@
     </style>
 </head>
 
-<body>
+<body onload="check()">
     <div class="container">
         <div class="box">
             <form action="" id="form" method="POST">
@@ -252,11 +252,11 @@
                     </div>
                     <div class="input-group">
                         <div class="input-field">
-                            <input type="text" class="input-box login-input" name="uEmail" id="logEmail">
+                            <input type="text" class="input-box login-input" name="uEmailL" id="logEmail" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$">
                             <label for="logEmail">Email address</label>
                         </div>
                         <div class="input-field">
-                            <input type="password" class="input-box login-input" name="uPass" id="logPassword">
+                            <input type="password" class="input-box login-input" name="uPassL" id="logPassword" pattern=".{5,}">
                             <label for="logPassword">Password</label>
                             <div class="eye-area">
                                 <div class="eye-box" onclick="myLogPassword()">
@@ -284,19 +284,19 @@
                     </div>
                     <div class="input-group">
                         <div class="input-field">
-                            <input type="text" name="uName" class="input-box input-register" id="regUsername">
+                            <input type="text" name="uNameR" class="input-box input-register" id="regUsername">
                             <label for="regUsername">Username</label>
                         </div>
                         <div class="input-field">
-                            <input type="numbers" maxlength="10" minlength="10" name="uPhone" class="input-box input-register" id="regph">
+                            <input type="numbers" maxlength="10" minlength="10" name="uPhoneR" class="input-box input-register" id="regph">
                             <label for="regph">Phone No:</label>
                         </div>
                         <div class="input-field">
-                            <input type="text" name="uEmail" class="input-box input-register" id="regEmail">
+                            <input type="text" name="uEmailR" class="input-box input-register" id="regEmail" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$">
                             <label for="regEmail">Email address</label>
                         </div>
                         <div class="input-field">
-                            <input type="password" name="uPass" class="input-box input-register" id="regPassword" pattern="{.5,}">
+                            <input type="password" name="uPassR" class="input-box input-register" id="regPassword" pattern=".{5,}">
                             <label for="regPassword">Password</label>
                             <div class="eye-area">
                                 <div class="eye-box" onclick="myRegPassword()">
@@ -395,6 +395,14 @@
                 c.style.opacity = "0";
             }
 
+        }
+
+        function check() {
+            const searchParams = new URLSearchParams(window.location.search);
+            if (searchParams.has('exists')) {
+                // document.getElementById("registered").style.display = "block";
+                alert("Email already taken.")
+            }
         }
     </script>
 </body>

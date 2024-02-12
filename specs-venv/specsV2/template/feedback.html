@@ -24,22 +24,19 @@
             </div>
             <div class="col-lg-4 col-md-4 col-sm-12">
                 <div class="contact_form">
-                    <form action="#" method="POST">
+                    <form action="#" method="POST" onsubmit="alert('Thank you for your feedback!')">
                         {% csrf_token %}
                         <fieldset>
                             <div class="full field">
-                                <textarea id="feedback-textarea" placeholder="YOUR FEEDBACK" style=" border-bottom: 2px solid sienna;"></textarea>
+                                <textarea id="feedback-textarea" placeholder="YOUR FEEDBACK" style=" border-bottom: 2px solid sienna;" required></textarea>
                                 <input style="visibility: hidden;" id="feedback-input" type="text" name="feedback" />
                             </div>
                             <div class="full">
-
-                                <div class="center" id="feedback-submit"><input type="submit" value="SUBMIT" style="
-                                    -webkit-text-fill-color:springgreen; background:darkslategray;
-                                    border-bottom: #185a6c;
-                                    border-radius: 15px;
-                                    width:160px;cursor: pointer;" />
+                                <div class="contact-form">
+                                    <div class="center" id="feedback-submit">
+                                        <button type="submit">Submit</button>
+                                    </div>
                                 </div>
-
                             </div>
                         </fieldset>
                     </form>
