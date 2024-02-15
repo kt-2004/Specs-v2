@@ -1,5 +1,6 @@
 from collections import defaultdict
 from datetime import datetime
+import math
 import os
 from MySQLdb import IntegrityError as I
 from django.shortcuts import render
@@ -95,7 +96,7 @@ def myprof(request):
             try:
                 student = Student.objects.get(email=request.session["email"])
                 result = eval(str(student.result)) # eval function is used to represent the score of student .
-                response = render(request,"myprof.html",{'uName':prof.uName,'uEmail':prof.uEmail,'uPhone':prof.uPhone,"score":student.score,"subjects":result,"info":"Your total score is:"})
+                response = render(request,"myprof.html",{'uName':prof.uName,'uEmail':prof.uEmail,'uPhone':prof.uPhone,"score":student.score,"subjects":result,"info":"Your total score is:","percentage":round(student.score*100/27,2)})
                 return response
             except:
                 response = render(request,"myprof.html",{'uName':prof.uName,'uEmail':prof.uEmail,'uPhone':prof.uPhone})
@@ -213,10 +214,15 @@ def fillform(request):
 def mcq(request):
     if not get_referer(request):
         return redirect("/register")
+    try:
+        if 'questions' in list(request.session.keys()):
+            return render(request, 'mcq.html', {'questions':request.session['questions']})
+    except:
+        pass
     with connection.cursor() as cursor:
         cursor.execute(f"SELECT * FROM sub_student WHERE email='{request.session['email']}'")
         for i in cursor.fetchall():
-            if i[-1] != -1: #if score is -1 then you can give xam its a default marks.
+            if i[-1] != -1: #if score is -1 then you can give exam otherwise not.
                 return HttpResponse("<h1>Can't Give Exam Twice.</h1>")  #if score is not -1 then you cannot give xam.
     if request.method == "POST":
         score=0
@@ -233,42 +239,41 @@ def mcq(request):
                     corrects[MCQ.objects.get(id=question_id).subject]+=1
                 else:
                     subjects[MCQ.objects.get(id=question_id).subject]+=1
-        print(dict(subjects))   #cmd msg
-        print(dict(corrects))   #cmd msg
         request.session["score"]=score  #print score on the browser.
         for i in subjects.keys():
             subjects[i] = str(corrects[i]) + "/" + str(subjects[i])
         request.session["subjects"]=subjects    #here format of score is given i.e Acc=3/3
-        print(str(subjects))    #cmd msg
         t = Student.objects.get(email=request.session["email"]) 
         t.result = str(dict(subjects))
         t.score = score
         t.save()
         return redirect("/result")
     temp = []   #empty list for mcqs to be given for test.
-    stud = Student.objects.get(email=request.session["email"])  #gets student email from fillform.
+    student_obj = Student.objects.get(email=request.session["email"])  #gets student email from fillform.
+    print(len(student_obj.get_interested_subjects_list()))
+    print(len(student_obj.get_skills_list()))
     with connection.cursor() as cursor:
-        for i in stud.get_interested_subjects_list():
+        for i in student_obj.get_interested_subjects_list():
             cursor.execute(f"SELECT * FROM sub_MCQ WHERE subject='{i}'")
             t1 = list(cursor.fetchall())    #fetch all ques from user selected int.subs.
             temp+=random.sample(t1,3)       #provide random 3 ques from them.
             t1=[]                           
-        for j in stud.get_skills_list():
+        for j in student_obj.get_skills_list():
             cursor.execute(f"SELECT * FROM sub_MCQ WHERE subject='{j}'")
             t2 = list(cursor.fetchall())
-            print(j,t2)
             temp+=random.sample(t2,3)
             t2=[]
-        cursor.execute(f"SELECT * FROM sub_MCQ WHERE subject='{stud.subject1}'")
+        cursor.execute(f"SELECT * FROM sub_MCQ WHERE subject='{student_obj.subject1}'")
         temp +=  random.sample(list(cursor.fetchall()),3)
-        cursor.execute(f"SELECT * FROM sub_MCQ WHERE subject='{stud.subject2}'")
+        cursor.execute(f"SELECT * FROM sub_MCQ WHERE subject='{student_obj.subject2}'")
         temp +=  random.sample(list(cursor.fetchall()),3)
-        cursor.execute(f"SELECT * FROM sub_MCQ WHERE subject='{stud.subject3}'")
+        cursor.execute(f"SELECT * FROM sub_MCQ WHERE subject='{student_obj.subject3}'")
         temp +=  random.sample(list(cursor.fetchall()),3)
     questions = []
     for i in temp:
         questions.append([i[0],i[2].replace("Q.",""),i[3],i[4],i[5],i[6]])  #here Q will get replaced by numbers using forloop counter.
     random.shuffle(questions)
+    request.session['questions']=questions 
     return render(request, 'mcq.html', {'questions':questions})
 #To show detail analysis of result or score of user.
 @never_cache
@@ -278,7 +283,7 @@ def result(request):
     try:
         student = Student.objects.get(email=request.session["email"])
         result = eval(str(student.result)) # eval function is used to represent the score of student.
-        response = render(request,"result.html",{"score":student.score,"subjects":result,"info":"Your total score is:"})
+        response = render(request,"result.html",{"score":student.score,"subjects":result,"info":"Your total score is:","percentage":math.round(student.score*100/27,2)})
         return response
     except:
         return redirect("/myprof")
