@@ -113,12 +113,16 @@ def logout(request):
     response.set_cookie("isLoggedIn", False)
     request.session['username'] = None
     request.session['email'] = None
+    if 'questions' in list(request.session.keys()):
+        del request.session['questions'] # if you cmmt this line then only you'll be able to logout.
+    request.session.modified = True
     return response
 #Register and Login function are combined here using User model for both.
 def register(request):
     response = redirect("/home/?registered")
     if request.method=='POST':
-        if request.POST.get('register', True): #For Register...
+        print(list(request.POST.keys()))
+        if 'register' in list(request.POST.keys()): #For Register...
             uName=request.POST['uNameR']
             uEmail=request.POST['uEmailR']
             uPass=request.POST['uPassR']
@@ -130,25 +134,33 @@ def register(request):
                 return redirect('/register/?exists')
             response.set_cookie('username',uName)
             request.session['username'] = uName
+            request.session['email'] = uEmail
             print(request.session['username'])
             response.set_cookie('isLoggedIn',True)
             print("user saved" + str(formData))
+
             return response
-        elif request.POST.get('login', True):  #For Login...
-            uEmail=request.POST['uEmailL']
-            uPass=request.POST['uPassL']
+        elif 'login' in list(request.POST.keys()): #For Login...
+            print("logging in...")
+            uEmailL=request.POST['uEmailL']
+            uPassL=request.POST['uPassL']
             try:
-                user=User.objects.get(uEmail=uEmail)
-            except:
+                print(uEmailL)
+                user=User.objects.get(uEmail=uEmailL)
+            except Exception as e:
+                print(e)
                 return render(request,"register.html",{"error":"Incorrect Email or password"})
-            if user.uPass == uPass:
+            if user.uPass == uPassL:
                 response.set_cookie('username', user.uName)
                 response.set_cookie('isLoggedIn',True)
-                request.session['username'] = User.objects.get(uEmail=uEmail).uName
+                request.session['username'] = user.uName
+                request.session['email'] = user.uEmail
                 print(request.session['username'])
                 return response
             else:
                 return render(request,"register.html",{"error":"Incorrect Email or password"})
+        else:
+            print("invalid url data")
     return render(request,"register.html")
 #Feedback...
 def feedback(request):
@@ -171,24 +183,17 @@ def fillform(request):
     if not get_referer(request):
         print("user not logged in") #for cmd
         return redirect("/register")
-    with connection.cursor() as cursor:
-        cursor.execute(f"SELECT * FROM sub_student WHERE email='{request.session['email']}'")
-        print(cursor.fetchall())
-        for i in cursor.fetchall():
-            if i[-1] != -1:
-                return HttpResponse("<h1>Can't Give Exam Twice.</h1>")
+
+    if int(User.objects.get(uEmail=request.session["email"]).Student.score) != -1:
+        return HttpResponse("<h1>Can't Give Exam Twice.</h1>")
     isLoggedIn = request.COOKIES.get('isLoggedIn','False')
     if isLoggedIn=='True':
         if request.method == 'POST':
-            try:
-                Student.objects.get(email=request.POST["email"])#For using one email at time.
-                return HttpResponse("Email Already Exists")#Msg
-            except:
-                Student.objects.create(
+            Student.objects.create(
                     first_name = request.POST["first_name"],
                     last_name = request.POST["last_name"],
                     date_of_birth = datetime.strptime(request.POST["date_of_birth"], '%Y-%m-%d').date(),
-                    email = request.POST["email"],
+                    email = request.session["email"],
                     seat_no = request.POST["seat_no"],
                     stream = request.POST["stream"],
                     subject1 = request.POST.getlist("subject[]")[0],
@@ -201,30 +206,32 @@ def fillform(request):
                     interested_subjects = ((str(request.POST.getlist("interested_subjects[]"))).replace('[', '')).replace(']', '').replace("\'",""),
                     score=-1
                 )
-                request.session["email"] = request.POST["email"]
-                return redirect("/mcq")
+            usr = User.objects.get(uEmail=request.session["email"])
+            usr.Student = Student.objects.get(email=request.session["email"])
+            usr.save()
+            print(User.objects.get(uEmail=request.session["email"]).Student)
+            print(Student.objects.get(email=request.session["email"]))
+            return redirect("/mcq")
         else:
             print("No form found") #for cmd
     else:
         return redirect("/register")
-    return render(request,"fillform.html")
+    print(request.session["email"])
+    return render(request,"fillform.html",{"e_mail":request.session["email"]})
 #MCQ are filtered here n modified.
 #add 3mcqs for each things which is selected by user at runtime.. for accurate result..
 @never_cache
 def mcq(request):
     if not get_referer(request):
         return redirect("/register")
-    try:
-        if 'questions' in list(request.session.keys()):
-            return render(request, 'mcq.html', {'questions':request.session['questions']})
-    except:
+    if int(User.objects.get(uEmail=request.session["email"]).Student.score) != -1:
+        return HttpResponse("<h1>Can't Give Exam Twice.</h1>")  #if score is not -1 then you cannot give xam.
+    if request.method == 'POST':#updated
         pass
-    with connection.cursor() as cursor:
-        cursor.execute(f"SELECT * FROM sub_student WHERE email='{request.session['email']}'")
-        for i in cursor.fetchall():
-            if i[-1] != -1: #if score is -1 then you can give exam otherwise not.
-                return HttpResponse("<h1>Can't Give Exam Twice.</h1>")  #if score is not -1 then you cannot give xam.
+    elif 'questions' in list(request.session.keys()):#updated
+        return render(request, 'mcq.html', {'questions':request.session['questions']})
     if request.method == "POST":
+        print("showing result...")
         score=0
         subjects = {}   #dictionary
         corrects = {}
@@ -243,24 +250,26 @@ def mcq(request):
         for i in subjects.keys():
             subjects[i] = str(corrects[i]) + "/" + str(subjects[i])
         request.session["subjects"]=subjects    #here format of score is given i.e Acc=3/3
-        t = Student.objects.get(email=request.session["email"]) 
+        t = User.objects.get(uEmail=request.session["email"]).Student
         t.result = str(dict(subjects))
         t.score = score
         t.save()
         return redirect("/result")
     temp = []   #empty list for mcqs to be given for test.
-    student_obj = Student.objects.get(email=request.session["email"])  #gets student email from fillform.
+    student_obj = User.objects.get(uEmail=request.session["email"]).Student  #gets student email from fillform.
     print(len(student_obj.get_interested_subjects_list()))
     print(len(student_obj.get_skills_list()))
     with connection.cursor() as cursor:
         for i in student_obj.get_interested_subjects_list():
             cursor.execute(f"SELECT * FROM sub_MCQ WHERE subject='{i}'")
             t1 = list(cursor.fetchall())    #fetch all ques from user selected int.subs.
+            print(i,t1)
             temp+=random.sample(t1,3)       #provide random 3 ques from them.
-            t1=[]                           
+            t1=[]                  
         for j in student_obj.get_skills_list():
             cursor.execute(f"SELECT * FROM sub_MCQ WHERE subject='{j}'")
             t2 = list(cursor.fetchall())
+            print(j,t2)
             temp+=random.sample(t2,3)
             t2=[]
         cursor.execute(f"SELECT * FROM sub_MCQ WHERE subject='{student_obj.subject1}'")
@@ -276,16 +285,16 @@ def mcq(request):
     request.session['questions']=questions 
     return render(request, 'mcq.html', {'questions':questions})
 #To show detail analysis of result or score of user.
-@never_cache
 def result(request):
     if not get_referer(request):
         return redirect("/register")
     try:
-        student = Student.objects.get(email=request.session["email"])
+        student = User.objects.get(uEmail=request.session["email"]).Student
         result = eval(str(student.result)) # eval function is used to represent the score of student.
-        response = render(request,"result.html",{"score":student.score,"subjects":result,"info":"Your total score is:","percentage":math.round(student.score*100/27,2)})
+        response = render(request,"result.html",{"score":student.score,"subjects":result,"info":"Your total score is:","percentage":round(student.score*100/27,2)})
         return response
-    except:
+    except Exception as e:
+        print(e)
         return redirect("/myprof")
 #Adding csv files of mcq to database here.Get refered function is not required here.
 #For-loop is used to add multiple files at once. 

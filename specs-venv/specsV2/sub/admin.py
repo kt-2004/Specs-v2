@@ -9,7 +9,6 @@ from django.contrib.admin.views import main
 admin.site.register(User)
 admin.site.register(Feedback)
 admin.site.register(Contact)
-admin.site.register(Email)
 admin.site.register(Student)
 admin.site.register(MCQ)
 class CollegeAdmin(admin.ModelAdmin):
