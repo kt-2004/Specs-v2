@@ -18,6 +18,7 @@ urlpatterns = [
     path('add/',views.add_to_db,name='add'),
     path('clg/',views.clg_to_db,name='clg'),
     path('result/',views.result,name='result'),
-     path('terms/',views.terms,name='terms'),
+    path('terms/',views.terms,name='terms'),
+    path('streams/',views.stream_desc,name='streams'),
 
 ]    

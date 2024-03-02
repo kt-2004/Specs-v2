@@ -377,3 +377,243 @@ def clg_to_db(request):
                         clg.save()
     return HttpResponse("check console")
 
+def stream_desc(request):
+    strup = """1. BCA
+Sub:Computer,English,Mathematics,Logical & Reasoning,Statistics,Ethical hacking,Web Designing,Computer Architecture,Cyber Security,Coding,Digital Arts,Leadership,Research and Obervation,Robotics & ML/AI,Animation
+
+2. BAF
+Sub:Mathematics, Accounts,Business Adminstration,English,Computer,Satistics,Civics,Trignometry,Writing,Leadership,Law
+
+3. Company Secretary
+Sub:Accounts,Economics,Business Administration,English,Arithmetic,Algebra,Civics,Law,Statistics,Leadership,Management
+
+4. Cost and Management Accountant
+Sub:Mathematics, Account,Economics,Business Administration,English,Computer,Arithmetic,Algebra,Statistics,Reading,Writing,Management,Leadership
+
+5. Bachelor of Economics 
+Sub: Statistics, Mathematics, Economics,English,Accounts,Satistics,Civics,Political Science,Research and observation,Leadership  
+
+6. BCOM
+Sub:Mathematics, Account,Economics,Business Administration,English,Computer,Statistics,Arithmetic,Leadership,Logical and Reasoning
+
+7. BBA
+Sub: Business Administration, Accounts,computer,English,Statistics,Economics,Law,web designing,Leadership,logical and reasoning,Research and observation
+
+8. Bachelor of Business Management
+Sub:Accounts, Business Administration, Economics, English,mathematics,Staistics,Arithmetic,Algebra,,Law,Civics,leadership,computer,Digital Arts
+
+9. Integrated MBA 
+Sub: Accounts, Business Administration, Economics, English,Computer,Law,Civics,Logical & Reasoning,Leadership,Management,Research and Observation
+
+10. LLB 
+Sub:English,Mathematics,History,Civics,Political Science,Economics,Law,Economics,Psychology,Statistics,Management,Leadership,Reading,Writing,Anchoring
+
+12. BSc IT
+Sub:English,Mathematics,Statistics,Computer,Computer Architecture,Web Designing,Ethical hacking,Cyber Security,Robotics & ML/AI,Coding,Digital Arts,Leadership,Research and Observation
+
+14. Media and Communication
+Sub: Sociology, English, Mathematics,Economics,Business Administration,Political Science,Law,Civics,Digital Arts,Philosophy,Leadership,Management,Reading,Writing,Anchoring,Animation
+
+15. Mass and Communication 
+Sub:English,Sociology,Political Science,Civics,Fine Arts,Digital Arts,Photography,Geography,Travelling,Leadership,Anchoring,Animation,Reading,Writing,Leadership
+
+16. Mass and Communication in Film
+Sub:English, histroy,Gujarati,Fine Arts,Digital Arts,Photography,Geography,Travelling,Leadership,Anchoring,Animation,Reading,Writing,Acting,makeup,MusicLeadership,P.t,Computer
+
+17. BSc in Biology
+sub:Biology,Chemistry,Physics,Mathematics,Statistics,Reading,Writing,Computer,Management,English,Lab Skills,Research and Observation
+
+18. BSc in Microbiology
+sub:Biology,English,Chemistry,Physics,Mathematics,Computer,Statistics,Psychology,Management,Leadership,
+
+19. Bachelor in Dental surgery
+sub:Biology,English,Chemistry,Physics,Mathematics,Computer,Statistics,Psychology,Management,Leadership,
+
+20. BSc in zoology
+sub:Biology,English,Chemistry,,Leadership,Geography,Wildlife research,History,Lab Skills,Research and Observation,Travelling,Environmental Science
+
+21. BSc in Medical Technology
+sub:Biology,Mathematics,Physics,Chemistry,English,Coding,Leadership,Environmental Science,Robotics & ML/AI,Computer Architecture
+
+22. BSc in Biotechnology
+sub:Biology,Chemistry,Mathematics,English,Coding,Cyber Security,Lab Skills,Research and Observation,Logical Reasoning,Computer Architecture
+
+23. BSc in Botany
+sub:Biology,Chemistry,Mathematics,English,Gardening,Environmental Science,Lab skills,Research and Observation,Leadership,Travelling,
+
+24. Bachelor of Homeopathic Medicine and Surgery
+sub:Biology,Chemistry,Mathematics,English,Sanskrit,P.T,Lab Skills,Gardening,Environmental Science, Cooking,History
+
+25. BSc in Nursing
+sub:Biology,Chemistry,Physics,English,Lab Skills,Research and Observation,Travelling,Leadership,
+
+26. BSc in Life Science
+sub:Biology,Chemistry,Physics,English,Lab Skills,Research and Observation,Environmental Science,Wildlife Research,Gardening,Leadership,Reading
+
+27. MBBS
+sub:Biology,Chemistry,Physics,English,Lab Skills,Research and Observation,Logical Reasoning,Reading,Writing,Leadership,Psychology
+
+28. Bachelor of Veterinary Sciences
+sub:Biology,Chemistry,Physics,English,Environmental Science,Wildlife Research,Lab Skill,Research and Observation,
+
+29. Bachelor of Pharmacy
+sub:Biology,Chemistry,Physics,English,lab skills,Research and Observation,Reading,Writing,Civics,Mathematics,Computer
+
+30. BSc in Food Technology
+sub:Biology,Chemistry,Physics,English,lab skills,Research and Observation,Physics,Computer,Electronics and hardware,Cooking,Photography,P.T
+
+31. BSc in Agriculture
+sub:Biology,Chemistry,Physics,English,lab skills,Research and Observation,P.T,Environmental Science,Gardening,Carpentry,Wildlife Research,Electronics and Hardware
+
+32. BSc in Genetics
+sub:Biology,Chemistry,Physics,Mathematics,English,lab skills,Research and Observation,Computer,Statistics,Trinometry,Logical reasoning
+
+33. Bachelor of Science in Agrochemical Science
+sub:Biology,Chemistry,Physics,Mathematics,English,lab skills,Research and Observation,Geography,Electronics and Hardware,Environmental Science,Leadership
+
+34. Bachelor of Ayurvedic Medicine and Surgery
+sub:Biology,Chemistry,Physics,Sanskrit,English,Environmental Science,P.T,Lab Skills,Gardening, Cooking,HistoryLeadership,Music
+
+35. BSc in Dairy farming
+sub:Biology,Chemistry,Physics,English,Environmental Science,P.T,Lab Skills,Wildlife Research,Geography,Geometry,Leadership,Photography,Writing
+
+36. B.Tech in Dairy Technology
+sub:Biology,Chemistry,Physics,English,Environmental Science,P.T,Lab Skills,Wildlife Research,Geography,Geometry,Leadership,Photography,Writing,Computer,Computer Architecture
+
+37. BSc in Audiology
+sub:Biology,Chemistry,Physics,English,lab skills,Research and Observation,Computer
+
+38. Bachelor in Optometry
+sub:Biology,Chemistry,Physics,English,Mathematics,P.T,lab skills,Research and Observation,Management,Computer
+
+39. Diploma in Pharmacy
+sub:Biology,Chemistry,Physics,English,lab skills,Research and Observation,Reading,Writing,Civics,Mathematics,Computer
+
+40. Diploma in Nursing
+sub:Biology,Chemistry,Physics,English,Lab Skills,Research and Observation,Travelling,Leadership
+
+41. Diploma in Medical Laboratory Technology
+sub:Biology,Chemistry,Physics,English,Mathematics,Computer,lab skills,Research and Observation,Management
+
+43. Diploma in Operation Theatre Technology
+sub:Biology,Chemistry,Physics,English,Mathematics,Computer,lab skills,Research and Observation,Management
+
+44. Diploma in X-Ray technology
+sub:Biology,Chemistry,Physics,English,Mathematics,Computer,lab skills,Research and Observation,Management,Electronics or Hardware 
+
+45. Bachelor in Physiotherapy
+sub:Biology,Chemistry,Physics,English,Mathematics,P.T,lab skills,Research and Observation,Management,Outdoor Games,indoor Games
+
+46. Diploma in Nutrition and Dietetics
+sub:Biology,Chemistry,Physics,English,P.T,Cooking,Writing,Indoor Games,Outdoor games,logical and Reasoning,lab skills,Research and Observation,Management
+
+47. B.Tech in Computer Science and Engineering
+sub:Computer, Mathematics,Physics,Chemistry,English ,Coding,Computer Architecture,Computer-Designing,Logical & Reasoning,Cyber Security,Electronics or Hardware,Reading
+
+48. B.Tech in Mechanical Engineering
+sub:Mathematics,Physics,Chemistry,Computer,Economics,Statistics,Electronics or Hardware ,Logical & Reasoning, Geometry,History,Leadership,Management,Outdoor Games,Electronics or Hardware,Research and Observations
+
+49. B.Tech in Electrical Engineering
+Sub:Electronics or Hardware,Mathematics,Physics,Chemistry,Arithmetic,Algebra,Geometry,Computer Architecture,Logical & Reasoning,Trigonometry,Coding ,Digital Arts,Management ,Leadership 
+
+50. B.Tech in Civil Engineering
+sub:Mathematics,Physics,Chemistry,Computer,English,P.T,Coding ,Logical & Reasoning,Management ,Leadership,Outdoor Games,Geometry
+
+51. B.Tech in Chemical Engineering
+sub:Chemistry,Physics,Mathematics,English,Computer,Cyber Security,Coding,Logical & Reasoning,Leadership
+
+52. BA in Biology
+sub:Biology,Physics,Chemistry,English,Reading,Writing,Logical Reasoning,Lab Skills,Environmental Science,Research and Observation
+
+53. BA in Communication
+sub:English,Sociology,Psychology,Leadership,Anchoring,Writing,Reading,Law,Digital Arts,Research and Observation
+
+54. BA in Economics
+sub:Economics,Mathematics,Political Science,Satistics,Writing,Business Adminstration,English,Law,Civics,Anchoring,History,Logical Reasoning
+
+55. Ba in Education
+sub:English,Psychology,Sociology,Mathematics,Writing,Reading,Leadership,History, Environmental Science,Anchoring,Research and Observation,Painting,Digital Arts
+
+56. BA in English
+sub:English,History,Writing,Reading,Painting,Sociology,History,Philosophy,
+
+57. BA in History
+sub:History,Political Science,Sociology,Economics,Reading,Writing,English,Research and Observation,Leadership,Anchoring
+
+58. BA in Journalism
+sub:English,Gujarati,Political Science,Sociology,Economics,History,Leadership,Anchoring,Animation,Travelling,Law,Geography,Reading,Writing,Research and Observation,Logical reasoning
+
+59. BA in Philosophy
+sub:English,History,Sociology,Political Science,Economics,Sanskrit,Psychology,Logical reasoning,Reading,Writing,Leadership,Philosophy,Travelling
+
+60. BA in Political Science
+sub:English,Gujarati,Political Science,Psychology,Economics,Leadership,Writing,Anchoring,Law,Research and Observation,Logical Reasoning
+
+61. BA in Psychology
+sub:Psychology,Biology,Satistics,Sociology,English,Gujarati,Sanskrit,Management,Research and Observation,reading,Leadership,
+
+62. BA in Studio Art
+sub:History,Sociology,English,Fine Arts,Digital Arts,Photography,management,painting,Handicrafts & Arts,Knitting,Carpentery
+
+63. BA in Theatre and Drama
+sub:English,Gujarati,Sanskrit,Sociology,Fine Arts,Acting,Music,Leadership,Travelling,Phychology
+
+64. BA in Music
+sub:English,Gujarati,Sanskrit,Psychology,Fine Arts,Digital Arts,Photography,Music,Management,
+
+65. BDes in fashion Designing
+sub:English,History,Fine Arts,Digital Arts,Photography,Handicraft and Arts,Management,Painting,
+
+66. BDes in Interior Design
+sub:Mathematics,Physics,Geography,English,Fine Arts,Digital Arts,Psychology,Painting,Management,Animation
+
+67. BDes in Communication Design
+sub:Mathematics,English,History,Computer,Digital Arts,Fine Arts,Writing,Law,Research and Observation
+
+68. BDes in Industrial & Product Design
+sub:Mathematics,Physics,English,Physics,Chemistry,Fine Arts,Digital Arts,Business Administration,Management,Law,Research and Observation
+
+69. Bachelor of Journalism & Mass Communication
+sub:English,Gujarati,Political Science,Sociology,Economics,History,Leadership,Anchoring,Animation,Travelling,Law,Geography,Reading,Writing,Research and Observation,Logical reasoning
+
+70. BA LLB
+sub:Mathematics,Economics,Political Science,History,English,Logical Reasoning,Leadership,Management,Anchoring,Psychology,Law,Reading,Writing
+
+71. Diploma in Education
+sub:English,Psychology,Sociology,Mathematics,Writing,Reading,Leadership,History, Environmental Science,Anchoring,Research and Observation,Painting,Digital Arts
+
+"""
+    lines = strup.split("\n")
+    dict = {}
+    name = ""
+    for i in lines:
+        if i == "\n" or i=="":
+            continue
+        if ". " in i:
+            name = i.split(". ")[1]
+        else:
+            try:
+                dict[name] = i.split(":")[1]
+                print(name + " added")
+            except Exception as e:
+                print(f"Error {e} at adding " + i)
+    with connection.cursor() as cursor:
+        for stuff in dict.items():
+            try:
+                cursor.execute(f"SELECT * FROM sub_stream where name='{stuff[0]}';")
+                items = list(cursor.fetchall())
+                if len(items)<=0:
+                    raise IndexError
+                cursor.execute(f'UPDATE sub_stream SET description="{stuff[1]}" WHERE name="{stuff[0]}";')
+                # print("Updated " + stuff[0])
+            except Exception as e:
+                try:
+                    cursor.execute(f"SELECT * FROM sub_stream where name='{stuff[0]} ';")
+                    items = list(cursor.fetchall())
+                    if len(items)<=0:
+                        raise IndexError
+                    cursor.execute(f'UPDATE sub_stream SET description="{stuff[1]}" WHERE name="{stuff[0]} ";')
+                    # print("Updated " + stuff[0])
+                except:
+                    print(f"Error {e} while updating " + stuff[0])
+    return HttpResponse("Check Console")
