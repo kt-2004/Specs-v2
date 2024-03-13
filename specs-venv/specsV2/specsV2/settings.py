@@ -139,9 +139,9 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 # tls=Transport Layer Security ,it supports new algorithms for security and encryption purpose.recently this is most commonly in use.
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'hikhuko011@gmail.com'
+EMAIL_HOST_USER = 'CareerSpecs06@gmail.com'
 # space between password is not allowed here.
-EMAIL_HOST_PASSWORD = 'gxsvelxjtcemovax'
+EMAIL_HOST_PASSWORD = 'lievybyotintjryj'
 EMAIL_PORT = 587
 # ssl=Secure Sockets Layer,it uses older algorithms to provide security of data over internet.less in use due to TLS .
 EMAIL_USE_SSL = False
